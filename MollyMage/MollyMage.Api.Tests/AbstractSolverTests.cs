@@ -2,7 +2,7 @@
  * #%L
  * Codenjoy - it's a dojo-like platform from developers to developers.
  * %%
- * Copyright (C) 2018 Codenjoy
+ * Copyright (C) 2020 Codenjoy
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -19,27 +19,30 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using Bomberman.Api;
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Demo
+namespace Hero.Api.Tests
 {
-    /// <summary>
-    /// This is BombermanAI client demo.
-    /// </summary>
-    internal class YourSolver : AbstractSolver
+    [TestClass]
+    public class AbstractSolverTests
     {
-        public YourSolver(string server)
-            : base(server)
-        {            
-        }
-
-        /// <summary>
-        /// Calls each move to make decision what to do (next move)
-        /// </summary>
-        protected override string Get(Board board)
+        [TestMethod]
+        [DataRow("http")]
+        [DataRow("https")]
+        public void ShouldProvideWebSocketUrlFromServerAddress(string scheme)
         {
-            var action = Direction.Act.ToString();            
-            return action;
+            // Arrange.
+            var serverUrl = $"{scheme}://unit-test/board/player/0000000001111?code=88888888888";
+            var expectedWebSocketUrl = serverUrl.Replace("http", "ws").Replace("board/player/", "ws?user=").Replace("?code=", "&code=");
+
+            var solver = new TestSolver(serverUrl);
+
+            // Act.
+            var result = solver.GetWebSocketUrl(serverUrl);
+
+            // Assert.
+            Assert.AreEqual(expectedWebSocketUrl, result);
         }
     }
 }

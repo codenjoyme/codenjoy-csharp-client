@@ -26,11 +26,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Bomberman C# Client")]
+[assembly: AssemblyTitle("Hero C# Client Api")]
 [assembly: AssemblyDescription("Created by Evgen Rezoglazov (evgen.rezoglazov@globallogic.com). Updated by Fedorenko Stanislav. Updated by Oleksandr Baglai.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Codenjoy")]
-[assembly: AssemblyProduct("Codenjoy Bomberman C# Client")]
+[assembly: AssemblyProduct("Codenjoy Hero C# Client Api")]
 [assembly: AssemblyCopyright("Copyright © 2016 Codenjoy")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -41,7 +41,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3e0871b3-6c94-40c0-9200-1c0e53fbb6ac")]
+[assembly: Guid("ad1ea2f3-0f3a-42b2-aba5-aef7f8675e10")]
 
 // Version information for an assembly consists of the following four values:
 //

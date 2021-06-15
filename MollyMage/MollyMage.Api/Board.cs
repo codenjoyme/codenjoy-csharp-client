@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Bomberman.Api
+namespace Hero.Api
 {
     public class Board
     {
@@ -48,27 +48,27 @@ namespace Bomberman.Api
             }
         }
 
-        public Point GetBomberman()
+        public Point GetHero()
         {
-            return Get(Element.BOMBERMAN)
-                    .Concat(Get(Element.BOMB_BOMBERMAN))
-                    .Concat(Get(Element.DEAD_BOMBERMAN))
+            return Get(Element.HERO)
+                    .Concat(Get(Element.POTION_HERO))
+                    .Concat(Get(Element.DEAD_HERO))
                     .Single();
         }
 
-        public List<Point> GetOtherBombermans()
+        public List<Point> GetOtherHeroes()
         {
-            return Get(Element.OTHER_BOMBERMAN)
-                .Concat(Get(Element.OTHER_BOMB_BOMBERMAN))
-                .Concat(Get(Element.OTHER_DEAD_BOMBERMAN))
+            return Get(Element.OTHER_HERO)
+                .Concat(Get(Element.OTHER_POTION_HERO))
+                .Concat(Get(Element.OTHER_DEAD_HERO))
                 .ToList();
         }
 
-        public bool isMyBombermanDead
+        public bool isMyHeroDead
         {
             get
             {
-                return BoardString.Contains((char)Element.DEAD_BOMBERMAN);
+                return BoardString.Contains((char)Element.DEAD_HERO);
             }
         }
 
@@ -108,20 +108,20 @@ namespace Bomberman.Api
         public string ToString()
         {
            return string.Format("{0}\n" +
-                    "Bomberman at: {1}\n" +
-                    "Other bombermans at: {2}\n" +
-                    "Meat choppers at: {3}\n" +
-                    "Destroy walls at: {4}\n" +
-                    "Bombs at: {5}\n" +
+                    "Hero at: {1}\n" +
+                    "Other heroes at: {2}\n" +
+                    "Ghosts at: {3}\n" +
+                    "Treasure Boxes at: {4}\n" +
+                    "Potions as: {5}\n" +
                     "Blasts: {6}\n" +
                     "Expected blasts at: {7}\n" +
                     "Perks at: {8}",
                     BoardAsString(),
-                    GetBomberman(),
-                    ListToString(GetOtherBombermans()),
-                    ListToString(GetMeatChoppers()),
-                    ListToString(GetDestroyableWalls()),
-                    ListToString(GetBombs()),
+                    GetHero(),
+                    ListToString(GetOtherHeroes()),
+                    ListToString(GetGhosts()),
+                    ListToString(GetTreasureBoxes()),
+                    ListToString(GetPotions()),
                     ListToString(GetBlasts()),
                     ListToString(GetFutureBlasts()),
                     ListToString(GetPerks()));
@@ -134,18 +134,18 @@ namespace Bomberman.Api
 
         public List<Point> GetBarrier()
         {
-            return GetMeatChoppers()
+            return GetGhosts()
                 .Concat(GetWalls())
-                .Concat(GetBombs())
-                .Concat(GetDestroyableWalls())
-                .Concat(GetOtherBombermans())
+                .Concat(GetPotions())
+                .Concat(GetTreasureBoxes())
+                .Concat(GetOtherHeroes())
                 .Distinct()
                 .ToList();
         }
 
-        public List<Point> GetMeatChoppers()
+        public List<Point> GetGhosts()
         {
-            return Get(Element.MEAT_CHOPPER);
+            return Get(Element.GHOST);
         }
 
         public List<Point> Get(Element element)
@@ -170,29 +170,29 @@ namespace Bomberman.Api
             return Get(Element.WALL);
         }
 
-        public List<Point> GetDestroyableWalls()
+        public List<Point> GetTreasureBoxes()
         {
-            return Get(Element.DESTROYABLE_WALL);
+            return Get(Element.TREASURE_BOX);
         }
 
-        public List<Point> GetBombs()
+        public List<Point> GetPotions()
         {
-            return Get(Element.BOMB_TIMER_1)
-                .Concat(Get(Element.BOMB_TIMER_2))
-                .Concat(Get(Element.BOMB_TIMER_3))
-                .Concat(Get(Element.BOMB_TIMER_4))
-                .Concat(Get(Element.BOMB_TIMER_5))
-                .Concat(Get(Element.BOMB_BOMBERMAN))
-                .Concat(Get(Element.OTHER_BOMB_BOMBERMAN))
+            return Get(Element.POTION_TIMER_1)
+                .Concat(Get(Element.POTION_TIMER_2))
+                .Concat(Get(Element.POTION_TIMER_3))
+                .Concat(Get(Element.POTION_TIMER_4))
+                .Concat(Get(Element.POTION_TIMER_5))
+                .Concat(Get(Element.POTION_HERO))
+                .Concat(Get(Element.OTHER_POTION_HERO))
                 .ToList();
         }
 
         public List<Point> GetPerks()
         {
-            return Get(Element.BOMB_BLAST_RADIUS_INCREASE)
-                .Concat(Get(Element.BOMB_COUNT_INCREASE))
-                .Concat(Get(Element.BOMB_IMMUNE))
-                .Concat(Get(Element.BOMB_REMOTE_CONTROL))
+            return Get(Element.POTION_BLAST_RADIUS_INCREASE)
+                .Concat(Get(Element.POTION_COUNT_INCREASE))
+                .Concat(Get(Element.POTION_IMMUNE))
+                .Concat(Get(Element.POTION_REMOTE_CONTROL))
                 .ToList();
         }
 
@@ -203,15 +203,15 @@ namespace Bomberman.Api
 
         public List<Point> GetFutureBlasts()
         {
-            var bombs = GetBombs();
+            var potions = GetPotions();
             var result = new List<Point>();
-            foreach (var bomb in bombs)
+            foreach (var potion in potions)
             {
-                result.Add(bomb);
-                result.Add(bomb.ShiftLeft());
-                result.Add(bomb.ShiftRight());
-                result.Add(bomb.ShiftTop());
-                result.Add(bomb.ShiftBottom());
+                result.Add(potion);
+                result.Add(potion.ShiftLeft());
+                result.Add(potion.ShiftRight());
+                result.Add(potion.ShiftTop());
+                result.Add(potion.ShiftBottom());
             }
 
             return result.Where(blast => !blast.IsOutOf(Size) && !GetWalls().Contains(blast)).Distinct().ToList();

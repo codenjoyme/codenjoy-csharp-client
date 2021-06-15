@@ -2,7 +2,7 @@
  * #%L
  * Codenjoy - it's a dojo-like platform from developers to developers.
  * %%
- * Copyright (C) 2018 - 2020 Codenjoy
+ * Copyright (C) 2018 Codenjoy
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -19,24 +19,27 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Hero.Api;
 
-namespace Bomberman.Api.Tests
+namespace Demo
 {
-    public class TestSolver : AbstractSolver
+    /// <summary>
+    /// This is HeroAI client demo.
+    /// </summary>
+    internal class YourSolver : AbstractSolver
     {
-        public TestSolver(string server)
-           : base(server)
-        {
+        public YourSolver(string server)
+            : base(server)
+        {            
         }
 
-        protected internal override string Get(Board gameBoard)
+        /// <summary>
+        /// Calls each move to make decision what to do (next move)
+        /// </summary>
+        protected override string Get(Board board)
         {
-            return Direction.Act.ToString();
+            var action = Direction.Act.ToString();            
+            return action;
         }
     }
 }

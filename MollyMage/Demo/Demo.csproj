@@ -52,9 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bomberman.Api\Bomberman.Api.csproj">
+    <ProjectReference Include="..\Hero.Api\Hero.Api.csproj">
       <Project>{26B1AE94-CB40-411A-8A64-84285E395780}</Project>
-      <Name>Bomberman.Api</Name>
+      <Name>Hero.Api</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

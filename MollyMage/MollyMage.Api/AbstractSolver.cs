@@ -28,8 +28,8 @@ using System.Threading.Tasks;
 using System.Web;
 using WebSocketSharp;
 
-[assembly: InternalsVisibleTo("Bomberman.Api.Tests")]
-namespace Bomberman.Api
+[assembly: InternalsVisibleTo("Hero.Api.Tests")]
+namespace Hero.Api
 {
     public abstract class AbstractSolver
     {

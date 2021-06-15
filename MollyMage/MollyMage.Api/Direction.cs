@@ -19,41 +19,15 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using System;
-
-namespace Bomberman.Api
+namespace Hero.Api
 {
-    public class LengthToXY
+    public enum Direction
     {
-        public int Size;
-
-        public LengthToXY(int size)
-        {
-            Size = size;
-        }
-
-        private int InversionY(int y)
-        {
-            return Size - 1 - y;
-        }
-
-        private int InversionX(int x)
-        {
-            return x;
-        }
-
-        public int GetLength(int x, int y)
-        {
-            int xx = InversionX(x);
-            int yy = InversionY(y);
-            return yy * Size + xx;
-        }
-
-        public Point GetXY(int length)
-        {
-            int x = InversionX(length % Size);
-            int y = InversionY(length / Size);
-            return new Point(x, y);
-        }
+        Left,
+        Right,
+        Up,
+        Down,
+        Act,  // drop potion
+        Stop  // do nothing
     }
 }

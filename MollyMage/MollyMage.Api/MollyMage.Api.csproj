@@ -8,8 +8,8 @@
     <ProjectGuid>{26B1AE94-CB40-411A-8A64-84285E395780}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bomberman.Api</RootNamespace>
-    <AssemblyName>Bomberman.Api</AssemblyName>
+    <RootNamespace>Hero.Api</RootNamespace>
+    <AssemblyName>Hero.Api</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

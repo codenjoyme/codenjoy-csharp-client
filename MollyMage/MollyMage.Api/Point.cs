@@ -21,7 +21,7 @@
  */
 using System;
 
-namespace Bomberman.Api
+namespace Hero.Api
 {
     public struct Point
     {
