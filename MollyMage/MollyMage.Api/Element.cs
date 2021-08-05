@@ -116,6 +116,10 @@ namespace Hero.Api
         // (own potion and others as well). Temporary.
         POTION_IMMUNE = (short)'i',
 
+        // Hero can shoot by poison cloud
+        // Temporary.
+        POISON_THROWER = (short)'T',
+
     /// a void
         // This is the only place where you can move your Molly.
         NONE = (short)' '

@@ -193,6 +193,7 @@ namespace Hero.Api
                 .Concat(Get(Element.POTION_COUNT_INCREASE))
                 .Concat(Get(Element.POTION_IMMUNE))
                 .Concat(Get(Element.POTION_REMOTE_CONTROL))
+                .Concat(Get(Element.POISON_THROWER))
                 .ToList();
         }
 
