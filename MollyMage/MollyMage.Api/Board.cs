@@ -64,7 +64,7 @@ namespace Hero.Api
                 .ToList();
         }
 
-        public bool isMyHeroDead
+        public bool isGameOver
         {
             get
             {
