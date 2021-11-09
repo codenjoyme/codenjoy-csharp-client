@@ -19,23 +19,41 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using System;
 
-[assembly: AssemblyTitle("Hero C# Demo Tests")]
-[assembly: AssemblyDescription("Created by Oleksandr Lutsyk (aalutsyk@gmail.com)")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Codenjoy")]
-[assembly: AssemblyProduct("Codenjoy Hero C# Client")]
-[assembly: AssemblyCopyright("Copyright © 2018 Codenjoy")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+namespace Engine
+{
+    public class LengthToXY
+    {
+        public int Size;
 
-[assembly: ComVisible(false)]
+        public LengthToXY(int size)
+        {
+            Size = size;
+        }
 
-[assembly: Guid("3e222c57-56f3-4259-a01c-bf5c144670d6")]
+        private int InversionY(int y)
+        {
+            return Size - 1 - y;
+        }
 
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+        private int InversionX(int x)
+        {
+            return x;
+        }
+
+        public int GetLength(int x, int y)
+        {
+            int xx = InversionX(x);
+            int yy = InversionY(y);
+            return yy * Size + xx;
+        }
+
+        public Point GetXY(int length)
+        {
+            int x = InversionX(length % Size);
+            int y = InversionY(length / Size);
+            return new Point(x, y);
+        }
+    }
+}

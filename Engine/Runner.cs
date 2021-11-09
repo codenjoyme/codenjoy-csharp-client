@@ -29,9 +29,9 @@ using System.Web;
 using WebSocketSharp;
 
 [assembly: InternalsVisibleTo("Hero.Api.Tests")]
-namespace Hero.Api
+namespace Engine
 {
-    public abstract class AbstractSolver
+    public class Runner
     {
         private const string _responsePrefix = "board=";
 
@@ -51,7 +51,7 @@ namespace Hero.Api
         /// Intializes a new instance for class.
         /// </summary>
         /// <param name="serverUrl">The server http(s) address including user and code data.</param>
-        public AbstractSolver(string serverUrl)
+        public Runner(string serverUrl)
         {
             // Console.OutputEncoding = Encoding.UTF8;
             _webSocketUrl = GetWebSocketUrl(serverUrl);

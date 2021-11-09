@@ -22,10 +22,10 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Hero.Api.Tests
+namespace Engine.Tests
 {
     [TestClass]
-    public class AbstractSolverTests
+    public class RunnerTests
     {
         [TestMethod]
         [DataRow("http")]
@@ -36,10 +36,10 @@ namespace Hero.Api.Tests
             var serverUrl = $"{scheme}://unit-test/board/player/0000000001111?code=88888888888";
             var expectedWebSocketUrl = serverUrl.Replace("http", "ws").Replace("board/player/", "ws?user=").Replace("?code=", "&code=");
 
-            var solver = new TestSolver(serverUrl);
+            var runner = new Runner(serverUrl, new TestSolver());
 
             // Act.
-            var result = solver.GetWebSocketUrl(serverUrl);
+            var result = runner.GetWebSocketUrl(serverUrl);
 
             // Assert.
             Assert.AreEqual(expectedWebSocketUrl, result);

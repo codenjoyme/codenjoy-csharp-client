@@ -6,8 +6,8 @@
     <ProjectGuid>{02C7ECA6-7D22-458A-B670-C5BA23176289}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hero.Api.Tests</RootNamespace>
-    <AssemblyName>Hero.Api.Tests</AssemblyName>
+    <RootNamespace>Engine.Tests</RootNamespace>
+    <AssemblyName>Engine.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,13 +50,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractSolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunnerTests.cs" />
     <Compile Include="TestSolver.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Hero.Api\Hero.Api.csproj">
+    <ProjectReference Include="..\Engine\Engine.csproj">
       <Project>{26B1AE94-CB40-411A-8A64-84285E395780}</Project>
       <Name>Hero.Api</Name>
     </ProjectReference>

@@ -8,8 +8,8 @@
     <ProjectGuid>{26B1AE94-CB40-411A-8A64-84285E395780}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hero.Api</RootNamespace>
-    <AssemblyName>Hero.Api</AssemblyName>
+    <RootNamespace>Games</RootNamespace>
+    <AssemblyName>Games</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -50,12 +50,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Element.cs" />
-    <Compile Include="LengthToXY.cs" />
-    <Compile Include="Point.cs" />
-    <Compile Include="Direction.cs" />
-    <Compile Include="AbstractSolver.cs" />
-    <Compile Include="Board.cs" />
+    <Compile Include="Mollymage\Board.cs" />
+    <Compile Include="Mollymage\Direction.cs" />
+    <Compile Include="Mollymage\Element.cs" />
+    <Compile Include="Mollymage\Solver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

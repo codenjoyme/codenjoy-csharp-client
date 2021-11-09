@@ -19,15 +19,27 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-namespace Hero.Api
+using Hero.Api;
+
+namespace Games.Mollymage
 {
-    public enum Direction
+    /// <summary>
+    /// This is HeroAI client demo.
+    /// </summary>
+    internal class Solver
     {
-        Left,
-        Right,
-        Up,
-        Down,
-        Act,  // drop potion
-        Stop  // do nothing
+        public YourSolver(string server)
+            : base(server)
+        {            
+        }
+
+        /// <summary>
+        /// Calls each move to make decision what to do (next move)
+        /// </summary>
+        protected override string Get(Board board)
+        {
+            var action = Direction.Act.ToString();            
+            return action;
+        }
     }
 }

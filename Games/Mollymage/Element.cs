@@ -19,7 +19,8 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-namespace Hero.Api
+
+namespace Games.Mollymage
 {
     public enum Element : short
     {

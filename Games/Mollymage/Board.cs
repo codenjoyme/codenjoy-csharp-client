@@ -19,34 +19,15 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Hero.Api
+namespace Games.Mollymage
 {
-    public class Board
+    public class Board : AbstractBoard
     {
-
-        private String BoardString { get; }
-        private LengthToXY LengthXY;
-
-        public Board(String boardString)
-        {
-            BoardString = boardString.Replace("\n", "");
-            LengthXY = new LengthToXY(Size);
-        }        
-
-        /// <summary>
-        /// GameBoard size (actual board size is Size x Size cells)
-        /// </summary>
-        public int Size
-        {
-            get
-            {
-                return (int)Math.Sqrt(BoardString.Length);
-            }
-        }
 
         public Point GetHero()
         {
@@ -74,30 +55,10 @@ namespace Hero.Api
 
         public Element GetAt(Point point)
         {
-            if (point.IsOutOf(Size))
+            var result = AbstractBoard.GetAt(point);
+            if (result == null)
             {
                 return Element.WALL;
-            }
-            return (Element)BoardString[LengthXY.GetLength(point.X, point.Y)];
-        }
-
-        public bool IsAt(Point point, Element element)
-        {
-            if (point.IsOutOf(Size))
-            {
-                return false;
-            }
-
-            return GetAt(point) == element;
-        }
-
-        public string BoardAsString()
-        {
-            string result = "";
-            for (int i = 0; i < Size; i++)
-            {
-                result += BoardString.Substring(i * Size, Size);
-                result += "\n";
             }
             return result;
         }
@@ -127,11 +88,6 @@ namespace Hero.Api
                     ListToString(GetPerks()));
         }
 
-        private string ListToString(List<Point> list)
-        {
-            return string.Join(",", list.ToArray());
-        }
-
         public List<Point> GetBarrier()
         {
             return GetGhosts()
@@ -148,22 +104,6 @@ namespace Hero.Api
             return Get(Element.GHOST);
         }
 
-        public List<Point> Get(Element element)
-        {
-            List<Point> result = new List<Point>();
-
-            for (int i = 0; i < Size * Size; i++)
-            {
-                Point pt = LengthXY.GetXY(i);
-
-                if (IsAt(pt, element))
-                {
-                    result.Add(pt);
-                }
-            }
-
-            return result;
-        }
 
         public List<Point> GetWalls()
         {
@@ -218,38 +158,9 @@ namespace Hero.Api
             return result.Where(blast => !blast.IsOutOf(Size) && !GetWalls().Contains(blast)).Distinct().ToList();
         }
 
-        public bool IsAnyOfAt(Point point, params Element[] elements)
-        {
-            return elements.Any(elem => IsAt(point, elem));
-        }
-
-        public bool IsNear(Point point, Element element)
-        {
-            if (point.IsOutOf(Size))
-                return false;
-
-            return IsAt(point.ShiftLeft(),   element) ||
-                   IsAt(point.ShiftRight(),  element) ||
-                   IsAt(point.ShiftTop(),    element) ||
-                   IsAt(point.ShiftBottom(), element);
-        }
-
         public bool IsBarrierAt(Point point)
         {
             return GetBarrier().Contains(point);
-        }
-
-        public int CountNear(Point point, Element element)
-        {
-            if (point.IsOutOf(Size))
-                return 0;
-
-            int count = 0;
-            if (IsAt(point.ShiftLeft(),   element)) count++;
-            if (IsAt(point.ShiftRight(),  element)) count++;
-            if (IsAt(point.ShiftTop(),    element)) count++;
-            if (IsAt(point.ShiftBottom(), element)) count++;
-            return count;
         }
     }
 }

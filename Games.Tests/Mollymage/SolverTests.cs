@@ -24,7 +24,7 @@ using Hero.Api;
 using Demo;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DemoTests
+namespace Games.Tests.Mollymage
 {
     [TestClass]
     public class YourSolverTests
