@@ -22,14 +22,17 @@
 
 using Engine;
 using Engine.Infrastructure;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Games.Mollymage
 {
-    public class Board : AbstractBoard
+    public class Board : AbstractBoard<Element>
     {
+        public Board(string boardString)
+            : base(boardString)
+        {
+        }
 
         public Point GetHero()
         {
@@ -47,7 +50,7 @@ namespace Games.Mollymage
                 .ToList();
         }
 
-        public bool isGameOver
+        public bool IsGameOver
         {
             get
             {
@@ -57,18 +60,13 @@ namespace Games.Mollymage
 
         public Element GetAt(Point point)
         {
-            var result = AbstractBoard.GetAt(point);
-            if (result == null)
-            {
-                return Element.WALL;
-            }
-            return result;
+            return GetAt(point, Element.WALL);
         }
 
         /// <summary>
         /// gets board view as string
         /// </summary>
-        public string ToString()
+        public override string ToString()
         {
            return string.Format("{0}\n" +
                     "Hero at: {1}\n" +

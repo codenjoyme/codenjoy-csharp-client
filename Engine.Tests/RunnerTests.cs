@@ -19,8 +19,10 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using System;
+
+using Hero.Api.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit.Sdk;
 
 namespace Engine.Tests
 {
@@ -36,7 +38,7 @@ namespace Engine.Tests
             var serverUrl = $"{scheme}://unit-test/board/player/0000000001111?code=88888888888";
             var expectedWebSocketUrl = serverUrl.Replace("http", "ws").Replace("board/player/", "ws?user=").Replace("?code=", "&code=");
 
-            var runner = new Runner(serverUrl, new TestSolver());
+            var runner = new TestSolver(serverUrl);
 
             // Act.
             var result = runner.GetWebSocketUrl(serverUrl);

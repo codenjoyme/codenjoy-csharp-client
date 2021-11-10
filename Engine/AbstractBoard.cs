@@ -25,7 +25,7 @@ using System.Linq;
 
 namespace Engine
 {
-    public abstract class AbstractBoard
+    public abstract class AbstractBoard<T> where T : struct
     {
         protected string BoardString { get; }
 
@@ -48,28 +48,32 @@ namespace Engine
             }
         }
 
-        public Element GetAt(Point point)
+        public T GetAt(Point point, T defaultValue = default(T))
         {
             if (point.IsOutOf(Size))
             {
-                return null;
+                return defaultValue;
             }
-            return (Element)BoardString[LengthXY.GetLength(point.X, point.Y)];
+
+            var value = BoardString[LengthXY.GetLength(point.X, point.Y)];
+
+            return (T)Enum.ToObject(typeof(T), value);
         }
 
-        public bool IsAt(Point point, Element element)
+        public bool IsAt(Point point, T element)
         {
             if (point.IsOutOf(Size))
             {
                 return false;
             }
 
-            return GetAt(point) == element;
+            return EqualityComparer<T>.Default.Equals(GetAt(point), element);
         }
 
         public string BoardAsString()
         {
-            string result = "";
+            var result = string.Empty;
+            
             for (int i = 0; i < Size; i++)
             {
                 result += BoardString.Substring(i * Size, Size);
@@ -78,18 +82,13 @@ namespace Engine
             return result;
         }
 
-        public string ListToString(List<Point> list)
+        public List<Point> Get(T element)
         {
-            return string.Join(",", list.ToArray());
-        }
-
-        public List<Point> Get(Element element)
-        {
-            List<Point> result = new List<Point>();
+            var result = new List<Point>();
 
             for (int i = 0; i < Size * Size; i++)
             {
-                Point pt = LengthXY.GetXY(i);
+                var pt = LengthXY.GetXY(i);
 
                 if (IsAt(pt, element))
                 {
@@ -100,12 +99,12 @@ namespace Engine
             return result;
         }
 
-        public bool IsAnyOfAt(Point point, params Element[] elements)
+        public bool IsAnyOfAt(Point point, params T[] elements)
         {
             return elements.Any(elem => IsAt(point, elem));
         }
 
-        public bool IsNear(Point point, Element element)
+        public bool IsNear(Point point, T element)
         {
             if (point.IsOutOf(Size))
                 return false;
@@ -116,16 +115,32 @@ namespace Engine
                    IsAt(point.ShiftBottom(), element);
         }
 
-        public int CountNear(Point point, Element element)
+        public int CountNear(Point point, T element)
         {
             if (point.IsOutOf(Size))
                 return 0;
 
             int count = 0;
-            if (IsAt(point.ShiftLeft(),   element)) count++;
-            if (IsAt(point.ShiftRight(),  element)) count++;
-            if (IsAt(point.ShiftTop(),    element)) count++;
-            if (IsAt(point.ShiftBottom(), element)) count++;
+            if (IsAt(point.ShiftLeft(), element))
+            {
+                count++;
+            }
+
+            if (IsAt(point.ShiftRight(),  element))
+            {
+                count++;
+            }
+
+            if (IsAt(point.ShiftTop(),    element))
+            {
+                count++;
+            }
+
+            if (IsAt(point.ShiftBottom(), element))
+            {
+                count++;
+            }
+
             return count;
         }
     }

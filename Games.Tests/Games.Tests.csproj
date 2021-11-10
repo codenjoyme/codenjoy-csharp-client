@@ -53,14 +53,11 @@
     <Compile Include="Mollymage\SolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.csproj">
       <Project>{26B1AE94-CB40-411A-8A64-84285E395780}</Project>
       <Name>Engine</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Games\Games.csproj">
       <Project>{1527129C-C326-49E6-B53F-9E662BAF81FB}</Project>
       <Name>Games</Name>

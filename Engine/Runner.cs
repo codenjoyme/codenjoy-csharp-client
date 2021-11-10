@@ -21,28 +21,24 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Security.Authentication;
 using System.Threading.Tasks;
-using System.Web;
 using WebSocketSharp;
 
-[assembly: InternalsVisibleTo("Hero.Api.Tests")]
 namespace Engine
 {
-    public class Runner
+    public abstract class Runner<T, TEnum>
+        where TEnum : struct
+        where T : AbstractBoard<TEnum>
     {
         private const string _responsePrefix = "board=";
 
         private const int _maxRetriesCount = 3;
-
         private const int _retriestTimeoutInMilliseconds = 10000;
 
         private readonly string _webSocketUrl;
 
         private int _retriesCount;
-
         private bool _shouldExit;
 
         private WebSocket _gameServer;
@@ -87,18 +83,18 @@ namespace Engine
         }
 
         /// <summary>
-        /// Sould provide action for bot that will be sent back to game server, (quering each second).
+        /// Should provide action for bot that will be sent back to game server, (quering each second).
         /// </summary>
         /// <param name="gameBoard">The Game board.</param>
         /// <returns>Action for the bot.</returns>
-        protected internal abstract string Get(Board gameBoard);
+        public abstract string Get(T gameBoard);
 
         /// <summary>
         /// Convers game server URL to web socket URL.
         /// </summary>
         /// <param name="serverUrl">The game server URL.</param>
         /// <returns>The web socket URL.</returns>
-        protected internal string GetWebSocketUrl(string serverUrl)
+        public string GetWebSocketUrl(string serverUrl)
         {
             return serverUrl.Replace("http", "ws")
                             .Replace("board/player/", "ws?user=")
@@ -107,33 +103,35 @@ namespace Engine
 
         private void Socket_OnMessage(object sender, MessageEventArgs e)
         {
-            if (!_shouldExit)
+            if (_shouldExit)
             {
-                var response = e.Data;
-                _retriesCount = default;
+                return;
+            }
 
-                if (!response.StartsWith(_responsePrefix))
-                {
-                    Console.WriteLine("Something strange is happening on the server... Response:\n{0}", response);
-                    InitiateExit();
-                }
-                else
-                {
-                    var boardString = response.Substring(_responsePrefix.Length);
-                    var board = new Board(boardString);
+            var response = e.Data;
+            _retriesCount = 0;
 
-                    //Just print current state (gameBoard) to console
-                    Console.Clear();
-                    Console.SetCursorPosition(0, 0);
-                    Console.WriteLine(board.ToString());
+            if (!response.StartsWith(_responsePrefix))
+            {
+                Console.WriteLine("Something strange is happening on the server... Response:\n{0}", response);
+                InitiateExit();
+            }
+            else
+            {
+                var boardString = response.Substring(_responsePrefix.Length);
 
-                    var action = Get(board);
+                var board = (T)Activator.CreateInstance(typeof(T), boardString);
+                //Just print current state (gameBoard) to console
+                Console.Clear();
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine(board.ToString());
 
-                    Console.WriteLine("Answer: " + action);
-                    Console.SetCursorPosition(0, 0);
+                var action = Get(board);
 
-                    ((WebSocket)sender).Send(action);
-                }
+                Console.WriteLine("Answer: " + action);
+                Console.SetCursorPosition(0, 0);
+
+                ((WebSocket)sender).Send(action);
             }
         }
 

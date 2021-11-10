@@ -19,26 +19,23 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using Hero.Api;
+using Engine;
 
 namespace Games.Mollymage
 {
     /// <summary>
     /// This is HeroAI client demo.
     /// </summary>
-    internal class Solver
+    public class Solver : Runner<Board, Element>
     {
-        public YourSolver(string server)
+        public Solver(string server)
             : base(server)
         {            
         }
 
-        /// <summary>
-        /// Calls each move to make decision what to do (next move)
-        /// </summary>
-        protected override string Get(Board board)
+        public override string Get(Board gameBoard)
         {
-            var action = Direction.Act.ToString();            
+            var action = Direction.Act.ToString();
             return action;
         }
     }

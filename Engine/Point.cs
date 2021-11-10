@@ -19,7 +19,6 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using System;
 
 namespace Engine
 {
@@ -79,10 +78,9 @@ namespace Engine
         public static bool operator ==(Point p1, Point p2)
         {
             if (ReferenceEquals(p1, p2))
+            {
                 return true;
-
-            if (ReferenceEquals(p1, null) || ReferenceEquals(p2, null))
-                return false;
+            }
 
             return p1.X == p2.X && p1.Y == p2.Y;
         }
@@ -94,22 +92,27 @@ namespace Engine
 
         public override string ToString()
         {
-            return string.Format("[{0},{1}]", X, Y);
+            return $"[{X},{Y}]";
         }
 
         public override bool Equals(object obj)
         {
-            if (obj == null) return false;
-            if (!(obj is Point)) return false;
+            if (obj == null)
+            {
+                return false;
+            }
 
-            Point that = (Point)obj;
+            if (obj is Point point)
+            {
+                return point.X == X && point.Y == Y;
+            }
 
-            return that.X == X && that.Y == Y;
+            return false;
         }
 
         public override int GetHashCode()
         {
-            return (X.GetHashCode() ^ Y.GetHashCode());
+            return X.GetHashCode() ^ Y.GetHashCode();
         }
     }
 }

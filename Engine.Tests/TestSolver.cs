@@ -20,24 +20,21 @@
  * #L%
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Engine;
+using Engine.Tests;
 
 namespace Hero.Api.Tests
 {
-    public class TestSolver
+    public class TestSolver: Runner<TestBoard, TestElements>
     {
         public TestSolver(string server)
            : base(server)
         {
         }
 
-        protected internal override string Get(Board gameBoard)
+        public override string Get(TestBoard gameBoard)
         {
-            return Direction.Act.ToString();
+            return TestDirection.Act.ToString();
         }
     }
 }

@@ -19,12 +19,10 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using System;
-using Hero.Api;
-using Demo;
+using Games.Mollymage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Games.Tests.Mollymage
+namespace GamesTests
 {
     [TestClass]
     public class YourSolverTests
@@ -35,8 +33,8 @@ namespace Games.Tests.Mollymage
         [TestMethod]
         public void ShouldSomething()
         {
-            YourSolver d = new YourSolver("any server");
-            Board b = new Board("any board");
+            var d = new Solver("any server");
+            var b = new Board("any board");
 
             string firstStep = d.Get(b);
 

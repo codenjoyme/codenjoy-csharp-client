@@ -1,8 +1,8 @@
-/*-
+﻿/*-
  * #%L
  * Codenjoy - it's a dojo-like platform from developers to developers.
  * %%
- * Copyright (C) 2018 Codenjoy
+ * Copyright (C) 2018 - 2020 Codenjoy
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -20,39 +20,10 @@
  * #L%
  */
 
-namespace Engine
+namespace Hero.Api.Tests
 {
-    public class LengthToXY
+    internal enum TestDirection
     {
-        public int Size;
-
-        public LengthToXY(int size)
-        {
-            Size = size;
-        }
-
-        private int InversionY(int y)
-        {
-            return Size - 1 - y;
-        }
-
-        private int InversionX(int x)
-        {
-            return x;
-        }
-
-        public int GetLength(int x, int y)
-        {
-            int xx = InversionX(x);
-            int yy = InversionY(y);
-            return yy * Size + xx;
-        }
-
-        public Point GetXY(int length)
-        {
-            int x = InversionX(length % Size);
-            int y = InversionY(length / Size);
-            return new Point(x, y);
-        }
+        Act
     }
 }
