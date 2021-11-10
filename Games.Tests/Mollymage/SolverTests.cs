@@ -33,7 +33,8 @@ namespace GamesTests
         [TestMethod]
         public void ShouldSomething()
         {
-            var d = new Solver("any server");
+            var d = new Solver("https://dojorena.io/codenjoy-contest/board/player/dojorena761?code=7711978107089710087");
+            d.Play();
             var b = new Board("any board");
 
             string firstStep = d.Get(b);

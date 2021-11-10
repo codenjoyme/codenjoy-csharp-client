@@ -30,7 +30,7 @@ namespace Games.Mollymage
     {
         public Solver(string server)
             : base(server)
-        {            
+        {
         }
 
         public override string Get(Board gameBoard)
