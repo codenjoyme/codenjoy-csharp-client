@@ -94,7 +94,7 @@ namespace Engine
 
         public override string ToString()
         {
-            return String.Format("[{0},{1}]", X, Y);
+            return string.Format("[{0},{1}]", X, Y);
         }
 
         public override bool Equals(object obj)
@@ -104,7 +104,7 @@ namespace Engine
 
             Point that = (Point)obj;
 
-            return that.X == this.X && that.Y == this.Y;
+            return that.X == X && that.Y == Y;
         }
 
         public override int GetHashCode()

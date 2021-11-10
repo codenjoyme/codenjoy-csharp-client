@@ -27,11 +27,11 @@ namespace Engine
 {
     public abstract class AbstractBoard
     {
+        protected string BoardString { get; }
 
-        private String BoardString { get; }
         private LengthToXY LengthXY;
 
-        public Board(String boardString)
+        public AbstractBoard(string boardString)
         {
             BoardString = boardString.Replace("\n", "");
             LengthXY = new LengthToXY(Size);

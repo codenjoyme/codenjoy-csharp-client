@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02C7ECA6-7D22-458A-B670-C5BA23176289}</ProjectGuid>
+    <ProjectGuid>{3E222C57-56F3-4259-A01C-BF5C144670D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Games.Tests</RootNamespace>
@@ -61,11 +61,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-      <ProjectReference Include="..\Games\Games.csproj">
-        <Project>{1527129C-C326-49E6-B53F-9E662BAF81FB}</Project>
-        <Name>Games</Name>
-      </ProjectReference>
-    </ItemGroup>
+    <ProjectReference Include="..\Games\Games.csproj">
+      <Project>{1527129C-C326-49E6-B53F-9E662BAF81FB}</Project>
+      <Name>Games</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

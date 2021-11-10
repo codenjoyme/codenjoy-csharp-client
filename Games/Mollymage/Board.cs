@@ -20,6 +20,8 @@
  * #L%
  */
 
+using Engine;
+using Engine.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,13 +81,13 @@ namespace Games.Mollymage
                     "Perks at: {8}",
                     BoardAsString(),
                     GetHero(),
-                    ListToString(GetOtherHeroes()),
-                    ListToString(GetGhosts()),
-                    ListToString(GetTreasureBoxes()),
-                    ListToString(GetPotions()),
-                    ListToString(GetBlasts()),
-                    ListToString(GetFutureBlasts()),
-                    ListToString(GetPerks()));
+                    GetOtherHeroes().ListAsString(),
+                    GetGhosts().ListAsString(),
+                    GetTreasureBoxes().ListAsString(),
+                    GetPotions().ListAsString(),
+                    GetBlasts().ListAsString(),
+                    GetFutureBlasts().ListAsString(),
+                    GetPerks().ListAsString());
         }
 
         public List<Point> GetBarrier()

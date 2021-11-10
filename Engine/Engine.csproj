@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\EnumerableExtension.cs" />
     <Compile Include="LengthToXY.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="AbstractBoard.cs" />
