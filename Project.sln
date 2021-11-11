@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1401
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{26B1AE94-CB40-411A-8A64-84285E395780}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine.Tests", "Engine.Tests\Engine.Tests.csproj", "{02C7ECA6-7D22-458A-B670-C5BA23176289}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Tests", "Games.Tests\Games.Tests.csproj", "{3E222C57-56F3-4259-A01C-BF5C144670D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dojo", "Dojo\Dojo.csproj", "{3668F9AE-E25D-4964-9893-CBAE868E0DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +123,30 @@ Global
 		{3E222C57-56F3-4259-A01C-BF5C144670D6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3E222C57-56F3-4259-A01C-BF5C144670D6}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E222C57-56F3-4259-A01C-BF5C144670D6}.Release|x86.Build.0 = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug_Ubuntu|Any CPU.ActiveCfg = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug_Ubuntu|Any CPU.Build.0 = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug_Ubuntu|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug_Ubuntu|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug_Ubuntu|x86.ActiveCfg = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug_Ubuntu|x86.Build.0 = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Debug|x86.Build.0 = Debug|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release_Ubuntu|Any CPU.ActiveCfg = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release_Ubuntu|Any CPU.Build.0 = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release_Ubuntu|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release_Ubuntu|Mixed Platforms.Build.0 = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release_Ubuntu|x86.ActiveCfg = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release_Ubuntu|x86.Build.0 = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release|x86.ActiveCfg = Release|Any CPU
+		{3668F9AE-E25D-4964-9893-CBAE868E0DD1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
