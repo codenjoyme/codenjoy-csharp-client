@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="NewFile1.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Client\" />
   </ItemGroup>
 

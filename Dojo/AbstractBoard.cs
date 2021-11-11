@@ -27,7 +27,7 @@ namespace Dojo
     {
         protected string BoardString { get; }
 
-        private LengthToXY LengthXY;
+        protected readonly LengthToXY LengthXY;
 
         public AbstractBoard(string boardString)
         {

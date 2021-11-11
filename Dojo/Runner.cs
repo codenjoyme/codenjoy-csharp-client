@@ -41,11 +41,11 @@ namespace Engine
         private WebSocket _gameServer;
 
         // Select your game
-        private String game = "mollymage";
+        private string _game = "Mollymage";
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
-        private String url = "http://localhost:8080/codenjoy-contest/board/player/0?code=000000000000";
+        private string _url = "http://localhost:8080/codenjoy-contest/board/player/0?code=000000000000";
 
         /// <summary>
         /// Intializes a new instance for class.
@@ -73,8 +73,8 @@ namespace Engine
 
             if (args != null && args.Length == 2)
             {
-                game = args[0];
-                url = args[1];
+                _game = args[0];
+                _url = args[1];
                 Console.WriteLine("Environment");
             }
             else
@@ -82,11 +82,11 @@ namespace Engine
                 Console.WriteLine("Runner");
             }
 
-            Console.WriteLine($"GAME: {game}");
-            Console.WriteLine($"URL: {url}");
+            Console.WriteLine($"GAME: {_game}");
+            Console.WriteLine($"URL: {_url}");
 
             // Console.OutputEncoding = Encoding.UTF8;
-            _webSocketUrl = GetWebSocketUrl(url);
+            _webSocketUrl = GetWebSocketUrl(_url);
 
             Play();
         }
@@ -166,9 +166,11 @@ namespace Engine
             }
         }
 
-        private ISolver<> GetCameBoard()
+        private ISolver<T, TEnum> GetCameBoard<T, TEnum>()
+            where T : AbstractBoard<TEnum>
+            where TEnum : Enum
         {
-            throw new NotImplementedException();
+            var 
         }
 
         private async Task ReconnectAsync(bool wasClean, ushort code)

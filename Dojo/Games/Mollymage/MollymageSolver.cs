@@ -24,9 +24,9 @@ namespace Games.Mollymage
     /// <summary>
     /// This is HeroAI client demo.
     /// </summary>
-    public class Solver : ISolver<Board, Element>
+    public class MollymageSolver : ISolver<MollymageBoard, Element>
     {
-        public string Get(Board gameBoard)
+        public string Get(MollymageBoard gameBoard)
         {
             var action = Direction.Act.ToString();
             return action;

@@ -23,14 +23,12 @@
 using Dojo;
 using Engine;
 using Engine.Infrastructure;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Games.Mollymage
 {
-    public class Board : AbstractBoard<Element>
+    public class MollymageBoard : AbstractBoard<Element>
     {
-        public Board(string boardString)
+        public MollymageBoard(string boardString)
             : base(boardString)
         {
         }
