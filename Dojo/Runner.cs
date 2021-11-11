@@ -20,6 +20,7 @@
  * #L%
  */
 using Dojo;
+using Games.Mollymage;
 using System.Net;
 using System.Security.Authentication;
 using WebSocketSharp;
@@ -45,14 +46,7 @@ namespace Engine
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
-        private string _url = "http://localhost:8080/codenjoy-contest/board/player/0?code=000000000000";
-
-        /// <summary>
-        /// Intializes a new instance for class.
-        /// </summary>
-        public Runner()
-        {
-        }
+        private string _url = "https://dojorena.io/codenjoy-contest/board/player/dojorena761?code=7711978107089710087";
 
         private static bool IsAllowedToReconnect(ushort code)
         {
@@ -89,6 +83,8 @@ namespace Engine
             _webSocketUrl = GetWebSocketUrl(_url);
 
             Play();
+
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -151,13 +147,14 @@ namespace Engine
             {
                 var boardString = response.Substring(_responsePrefix.Length);
 
-                var board = GetCameBoard();
+                var board = GetCameBoard(boardString);
                 //Just print current state (gameBoard) to console
                 Console.Clear();
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine(board.ToString());
 
-                var action = board;
+                var solver = GetGameSolver();
+                var action = solver.Get(board);
 
                 Console.WriteLine("Answer: " + action);
                 Console.SetCursorPosition(0, 0);
@@ -166,11 +163,28 @@ namespace Engine
             }
         }
 
-        private ISolver<T, TEnum> GetCameBoard<T, TEnum>()
-            where T : AbstractBoard<TEnum>
-            where TEnum : Enum
+        private ISolver GetGameSolver()
         {
-            var 
+            switch (_game)
+            {
+                case "Mollymage":
+                    return new MollymageSolver();
+                    break;
+                default:
+                    throw new ArgumentException("This game wasn't implemented");
+            }
+        }
+
+        private IBoard GetCameBoard(string boardString)
+        {
+            switch(_game)
+            {
+                case "Mollymage":
+                    return new MollymageBoard(boardString);
+                    break;
+                default:
+                    throw new ArgumentException("This game wasn't implemented");
+            }
         }
 
         private async Task ReconnectAsync(bool wasClean, ushort code)

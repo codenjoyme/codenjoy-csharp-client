@@ -23,7 +23,8 @@ using Engine;
 
 namespace Dojo
 {
-    public abstract class AbstractBoard<T> where T : Enum
+    public abstract class AbstractBoard<T> : AbstractLayeredBoard<T>
+        where T : Enum
     {
         protected string BoardString { get; }
 

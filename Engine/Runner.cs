@@ -121,6 +121,8 @@ namespace Engine
                 var boardString = response.Substring(_responsePrefix.Length);
 
                 var board = (T)Activator.CreateInstance(typeof(T), boardString);
+
+
                 //Just print current state (gameBoard) to console
                 Console.Clear();
                 Console.SetCursorPosition(0, 0);
