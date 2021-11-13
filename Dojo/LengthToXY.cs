@@ -20,7 +20,7 @@
  * #L%
  */
 
-namespace Engine
+namespace Dojo
 {
     public class LengthToXY
     {

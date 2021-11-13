@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Engine.Tests
+namespace Dojo.Games.Mollymage.Tests
 {
-    public enum TestElements
+    internal class BoardTests
     {
-        Default
     }
 }

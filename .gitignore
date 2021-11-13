@@ -325,3 +325,5 @@ ASALocalRun/
 .mfractor/
 
 EventImg/
+/.dotnet
+/.tools/dotnet.zip

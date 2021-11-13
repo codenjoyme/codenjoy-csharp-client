@@ -1,8 +1,8 @@
-﻿/*-
+/*-
  * #%L
  * Codenjoy - it's a dojo-like platform from developers to developers.
  * %%
- * Copyright (C) 2018 - 2020 Codenjoy
+ * Copyright (C) 2018 Codenjoy
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -19,11 +19,24 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
+using Dojo;
 
-namespace Hero.Api.Tests
+namespace Dojo.Games.Mollymage
 {
-    internal enum TestDirection
+    /// <summary>
+    /// This is HeroAI client demo.
+    /// </summary>
+    public class Solver : ISolver
     {
-        Act
+        public string Get(IBoard gameBoard)
+        {
+            return Get(gameBoard as Board);
+        }
+
+        private string Get(Board gameBoard)
+        {
+            // Type here your code
+            return Direction.Act.ToString();
+        }
     }
 }

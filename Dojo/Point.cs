@@ -20,7 +20,7 @@
  * #L%
  */
 
-namespace Engine
+namespace Dojo
 {
     public struct Point
     {
@@ -72,7 +72,7 @@ namespace Engine
         public Point ShiftBottom(int delta = 1)
         {
             return new Point(X, Y - delta);
-            
+
         }
 
         public static bool operator ==(Point p1, Point p2)

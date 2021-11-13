@@ -20,12 +20,10 @@
  * #L%
  */
 
-using Engine;
-using Engine.Infrastructure;
-using System.Collections.Generic;
-using System.Linq;
+using Dojo;
+using Dojo.Infrastructure;
 
-namespace Games.Mollymage
+namespace Dojo.Games.Mollymage
 {
     public class Board : AbstractBoard<Element>
     {
@@ -68,24 +66,24 @@ namespace Games.Mollymage
         /// </summary>
         public override string ToString()
         {
-           return string.Format("{0}\n" +
-                    "Hero at: {1}\n" +
-                    "Other heroes at: {2}\n" +
-                    "Ghosts at: {3}\n" +
-                    "Treasure Boxes at: {4}\n" +
-                    "Potions as: {5}\n" +
-                    "Blasts: {6}\n" +
-                    "Expected blasts at: {7}\n" +
-                    "Perks at: {8}",
-                    BoardAsString(),
-                    GetHero(),
-                    GetOtherHeroes().ListAsString(),
-                    GetGhosts().ListAsString(),
-                    GetTreasureBoxes().ListAsString(),
-                    GetPotions().ListAsString(),
-                    GetBlasts().ListAsString(),
-                    GetFutureBlasts().ListAsString(),
-                    GetPerks().ListAsString());
+            return string.Format("{0}\n" +
+                     "Hero at: {1}\n" +
+                     "Other heroes at: {2}\n" +
+                     "Ghosts at: {3}\n" +
+                     "Treasure Boxes at: {4}\n" +
+                     "Potions as: {5}\n" +
+                     "Blasts: {6}\n" +
+                     "Expected blasts at: {7}\n" +
+                     "Perks at: {8}",
+                     BoardAsString(),
+                     GetHero(),
+                     GetOtherHeroes().ListAsString(),
+                     GetGhosts().ListAsString(),
+                     GetTreasureBoxes().ListAsString(),
+                     GetPotions().ListAsString(),
+                     GetBlasts().ListAsString(),
+                     GetFutureBlasts().ListAsString(),
+                     GetPerks().ListAsString());
         }
 
         public List<Point> GetBarrier()

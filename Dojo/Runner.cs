@@ -19,13 +19,11 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using Dojo;
-using Games.Mollymage;
-using System.Net;
+using Dojo.Games.Mollymage;
 using System.Security.Authentication;
 using WebSocketSharp;
 
-namespace Engine
+namespace Dojo
 {
     public class Runner
     {
@@ -42,11 +40,11 @@ namespace Engine
         private WebSocket _gameServer;
 
         // Select your game
-        private string _game = "Mollymage";
+        private string _game = "mollymage";
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
-        private string _url = "https://dojorena.io/codenjoy-contest/board/player/dojorena761?code=7711978107089710087";
+        private string _url = "https://dojorena.io/codenjoy-contest/board/player/dojorena762?code=1660136636364593901";
 
         private static bool IsAllowedToReconnect(ushort code)
         {
@@ -165,10 +163,10 @@ namespace Engine
 
         private ISolver GetGameSolver()
         {
-            switch (_game)
+            switch (_game.ToLowerInvariant())
             {
-                case "Mollymage":
-                    return new MollymageSolver();
+                case "mollymage":
+                    return new Solver();
                     break;
                 default:
                     throw new ArgumentException("This game wasn't implemented");
@@ -177,10 +175,10 @@ namespace Engine
 
         private IBoard GetCameBoard(string boardString)
         {
-            switch(_game)
+            switch (_game.ToLowerInvariant())
             {
-                case "Mollymage":
-                    return new MollymageBoard(boardString);
+                case "mollymage":
+                    return new Board(boardString);
                     break;
                 default:
                     throw new ArgumentException("This game wasn't implemented");

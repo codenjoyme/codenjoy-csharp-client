@@ -20,11 +20,11 @@
  * #L%
  */
 
-namespace Games.Mollymage
+namespace Dojo.Games.Mollymage
 {
     public enum Element : short
     {
-    /// your Molly
+        /// your Molly
 
         // This is what she usually looks like.
         HERO = (short)'☺',
@@ -37,7 +37,7 @@ namespace Games.Mollymage
         // You're getting penalty points for each death.
         DEAD_HERO = (short)'Ѡ',
 
-    /// other players heroes
+        /// other players heroes
 
         // This is what other heroes looks like.
         OTHER_HERO = (short)'♥',
@@ -50,7 +50,7 @@ namespace Games.Mollymage
         // If you've done it you'll get score points.
         OTHER_DEAD_HERO = (short)'♣',
 
-    /// the potions
+        /// the potions
         // After Molly set the potion, the timer starts (5 ticks).
         POTION_TIMER_5 = (short)'5',
 
@@ -70,7 +70,7 @@ namespace Games.Mollymage
         // everything that is destroyable got destroyed.
         BOOM = (short)'҉',
 
-    /// walls
+        /// walls
 
         // Indestructible wall - it will not fall from potion.
         WALL = (short)'☼',
@@ -84,7 +84,7 @@ namespace Games.Mollymage
         // points. Perhaps a prize will appear.
         OPENING_TREASURE_BOX = (short)'H',
 
-    /// soulless creatures
+        /// soulless creatures
 
         // This guys runs over the board randomly
         // and gets in the way all the time.
@@ -96,7 +96,7 @@ namespace Games.Mollymage
         // This is ghost corpse.
         DEAD_GHOST = (short)'x',
 
-    /// perks
+        /// perks
 
         // Potion blast radius increase.
         // Applicable only to new potions.
@@ -121,7 +121,7 @@ namespace Games.Mollymage
         // Temporary.
         POISON_THROWER = (short)'T',
 
-    /// a void
+        /// a void
         // This is the only place where you can move your Molly.
         NONE = (short)' '
     }
