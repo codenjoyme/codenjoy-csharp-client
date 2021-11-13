@@ -37,7 +37,7 @@ namespace Dojo.Games.Mollymage
             return Get(Element.HERO)
                     .Concat(Get(Element.POTION_HERO))
                     .Concat(Get(Element.DEAD_HERO))
-                    .Single();
+                    .Last();
         }
 
         public List<Point> GetOtherHeroes()
