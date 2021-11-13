@@ -40,11 +40,11 @@ namespace Dojo
         private WebSocket _gameServer;
 
         // Select your game
-        private string _game = "mollymage";
+        private string _game = "";
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
-        private string _url = "https://dojorena.io/codenjoy-contest/board/player/dojorena762?code=1660136636364593901";
+        private string _url = "";
 
         private static bool IsAllowedToReconnect(ushort code)
         {
