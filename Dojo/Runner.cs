@@ -41,7 +41,7 @@ namespace Dojo
         private WebSocket _gameServer;
 
         // Select your game
-        private string _game = "mollymage";
+        private string _game = "clifford";
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
