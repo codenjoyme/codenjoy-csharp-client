@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dojo.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace Dojo.Games.Clifford
 
         internal Point GetHero()
         {
-            var result = GetRelativeElements(GetHeroesElements()).FirstOrDefault();
+            var result = GetRelativeElements(GetHeroesElements()).Last();
             return result;
         }
 
@@ -55,9 +56,37 @@ namespace Dojo.Games.Clifford
             return result;
         }
 
-        internal bool IsGameOver()
+        internal List<Point> GetClues()
         {
-            return Get(CliffordElement.HERO_DIE).Any();
+            var result = GetRelativeElements(GetCluesElements());
+            return result;
+        }
+
+        internal List<Point> GetOpenDoors()
+        {
+            var result = GetRelativeElements(GetOpenDoorsElements());
+            return result;
+        }
+
+        internal List<Point> GetCloseDoors()
+        {
+            var result = GetRelativeElements(GetCloseDoorsElements());
+            return result;
+        }
+
+        internal List<Point> GetKeys()
+        {
+            var result = GetRelativeElements(GetCloseDoorsElements());
+            return result;
+        }
+
+
+        public bool IsGameOver
+        {
+            get
+            {
+                return BoardString.Contains((char)CliffordElement.HERO_DIE);
+            }
         }
 
         internal bool IsBarrierAt(Point point)
@@ -388,6 +417,32 @@ namespace Dojo.Games.Clifford
                 CliffordElement.ROBBER_PIPE,
                 CliffordElement.ROBBER_PIT
             };
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}\n" +
+                     "Hero at: {1}\n" +
+                     "Enemy heroes at: {2}\n" +
+                     "Other heroes at: {2}\n" +
+                     "Robbers at: {3}\n" +
+                     "Ladders at: {4}\n" +
+                     "Pipes at: {5}\n" +
+                     "Clues at: {6}\n" +
+                     "Keys at: {7}\n" +
+                     "Open doors at: {8}\n" +
+                     "Close doors at: {9}",
+                     BoardAsString(),
+                     GetHero(),
+                     GetEnemyHeroes().ListAsString(),
+                     GetOtherHeroes().ListAsString(),
+                     GetRobbers().ListAsString(),
+                     GetLadders().ListAsString(),
+                     GetPipes().ListAsString(),
+                     GetClues().ListAsString(),
+                     GetKeys().ListAsString(),
+                     GetOpenDoors().ListAsString(),
+                     GetCloseDoors().ListAsString());
         }
     }
 }
