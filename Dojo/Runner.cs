@@ -20,6 +20,7 @@
  * #L%
  */
 using Dojo.Games.Mollymage;
+using System.Reflection;
 using System.Security.Authentication;
 using WebSocketSharp;
 
@@ -44,7 +45,7 @@ namespace Dojo
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
-        private string _url = "https://dojorena.io/codenjoy-contest/board/player/dojorena762?code=1660136636364593901";
+        private string _url = "https://dojorena.io/codenjoy-contest/board/player/dojorena761?code=7711978107089710087";
 
         private static bool IsAllowedToReconnect(ushort code)
         {
@@ -163,26 +164,36 @@ namespace Dojo
 
         private ISolver GetGameSolver()
         {
-            switch (_game.ToLowerInvariant())
+            var boardInterfaceType = typeof(ISolver);
+            var types = Assembly.GetExecutingAssembly()
+                                .GetTypes()
+                                .Where(types => types.IsClass &&
+                                                types.GetInterfaces().Contains(boardInterfaceType));
+            var needType = types.FirstOrDefault(item => item.Name.ToLower().Contains(_game.ToLower()));
+
+            if (needType is null)
             {
-                case "mollymage":
-                    return new Solver();
-                    break;
-                default:
-                    throw new ArgumentException("This game wasn't implemented");
+                throw new ArgumentException("This game wasn't implemented");
             }
+
+            return (ISolver)Activator.CreateInstance(needType);
         }
 
         private IBoard GetCameBoard(string boardString)
         {
-            switch (_game.ToLowerInvariant())
-            {
-                case "mollymage":
-                    return new Board(boardString);
-                    break;
-                default:
-                    throw new ArgumentException("This game wasn't implemented");
+            var boardInterfaceType = typeof(IBoard);
+            var types = Assembly.GetExecutingAssembly()
+                                .GetTypes()
+                                .Where(types => types.IsClass &&
+                                                types.GetInterfaces().Contains(boardInterfaceType));
+            var needType = types.FirstOrDefault(item => item.Name.ToLower().Contains(_game.ToLower()));
+
+            if (needType is null)
+            { 
+                throw new ArgumentException("This game wasn't implemented");
             }
+            
+            return (IBoard)Activator.CreateInstance(needType, boardString);
         }
 
         private async Task ReconnectAsync(bool wasClean, ushort code)

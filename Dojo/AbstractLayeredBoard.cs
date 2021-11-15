@@ -8,9 +8,5 @@ namespace Dojo
 {
     public abstract class AbstractLayeredBoard<TEnum> : IBoard
     {
-        public IBoard ForString(string input)
-        {
-            return this;
-        }
     }
 }

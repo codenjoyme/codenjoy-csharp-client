@@ -8,6 +8,5 @@ namespace Dojo
 {
     public interface IBoard
     {
-        IBoard ForString(string input);
     }
 }
