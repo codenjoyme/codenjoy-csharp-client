@@ -20,7 +20,6 @@
  * #L%
  */
 
-using Dojo;
 using Dojo.Infrastructure;
 
 namespace Dojo.Games.Mollymage

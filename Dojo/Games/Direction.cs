@@ -20,7 +20,7 @@
  * #L%
  */
 
-namespace Dojo.Games.Mollymage
+namespace Dojo.Games
 {
     public enum Direction
     {

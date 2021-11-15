@@ -19,7 +19,6 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using Dojo;
 
 namespace Dojo.Games.Mollymage
 {
