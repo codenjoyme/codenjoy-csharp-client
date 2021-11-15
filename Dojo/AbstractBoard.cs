@@ -80,6 +80,20 @@ namespace Dojo
             return result;
         }
 
+        public List<Point> GetRelativeElements(List<T> elements)
+        {
+            var resultList = new List<Point>();
+
+            foreach (var item in elements)
+            {
+                resultList.AddRange(Get(item).AsEnumerable());
+            }
+
+            resultList = resultList.Distinct()
+                                   .ToList();
+            return resultList;
+        }
+
         public List<Point> Get(T element)
         {
             var result = new List<Point>();

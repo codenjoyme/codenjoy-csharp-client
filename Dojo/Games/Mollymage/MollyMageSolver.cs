@@ -19,21 +19,20 @@
  * <http://www.gnu.org/licenses/gpl-3.0.html>.
  * #L%
  */
-using Dojo;
 
 namespace Dojo.Games.Mollymage
 {
     /// <summary>
     /// This is HeroAI client demo.
     /// </summary>
-    public class Solver : ISolver
+    public class MollyMageSolver : ISolver
     {
         public string Get(IBoard gameBoard)
         {
-            return Get(gameBoard as Board);
+            return Get(gameBoard as MollymageBoard);
         }
 
-        private string Get(Board gameBoard)
+        private string Get(MollymageBoard gameBoard)
         {
             // Type here your code
             return Direction.Act.ToString();

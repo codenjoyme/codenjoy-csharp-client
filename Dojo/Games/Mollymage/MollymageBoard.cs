@@ -20,14 +20,13 @@
  * #L%
  */
 
-using Dojo;
 using Dojo.Infrastructure;
 
 namespace Dojo.Games.Mollymage
 {
-    public class Board : AbstractBoard<Element>
+    public class MollymageBoard : AbstractBoard<Element>
     {
-        public Board(string boardString)
+        public MollymageBoard(string boardString)
             : base(boardString)
         {
         }
