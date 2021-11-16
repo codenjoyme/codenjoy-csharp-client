@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Dojo.Games.Mollymage.Tests
 {
     [TestFixture]
+    [Category("mollymage")]
     public class BoardTests
     {
         [Test]
@@ -38,8 +39,8 @@ namespace Dojo.Games.Mollymage.Tests
         {
             var board = new MollymageBoard("#########");
 
-            var ex = Assert.Throws<InvalidOperationException>(() => board.GetHero());
-            Assert.That(ex.Message, Is.EqualTo("Sequence contains no elements"));
+            var ex = Assert.Throws<NullReferenceException>(() => board.GetHero());
+            Assert.That(ex.Message, Is.EqualTo("Hero element has not been found."));
         }
 
         [Test]
@@ -56,14 +57,23 @@ namespace Dojo.Games.Mollymage.Tests
         public void Test_GetOtherHeroes()
         {
             var board = new MollymageBoard("#♥##♠##♣#");
-            CollectionAssert.AreEquivalent(new[] { new Point(1, 0), new Point(1, 1), new Point(1, 2) }, board.GetOtherHeroes());
+            CollectionAssert.AreEqual(new[] { new Point(1, 0), new Point(1, 1), new Point(1, 2) }, board.GetOtherHeroes());
         }
+
+        [Test]
+        public void Test_GetEnemyHeroes()
+        {
+            var board = new MollymageBoard("#ö#" + "#Ö#" + "#ø#");
+            CollectionAssert.AreEqual(new[] { new Point(1, 0), new Point(1, 1), new Point(1, 2) },
+                board.GetEnemyHeroes());
+        }
+
 
         [Test]
         public void Test_GetBarriers()
         {
             var board = new MollymageBoard("☼&#123♥♠♣");
-            CollectionAssert.AreEquivalent(
+            CollectionAssert.AreEqual(
                 new[] { new Point(0, 0), new Point(0, 1), new Point(0, 2),
                     new Point(1, 0), new Point(1, 1), new Point(1, 2),
                     new Point(2, 0), new Point(2, 1), new Point(2, 2) },
@@ -74,7 +84,7 @@ namespace Dojo.Games.Mollymage.Tests
         public void Test_GetWalls()
         {
             var board = new MollymageBoard("###☼##☼##");
-            CollectionAssert.AreEquivalent(
+            CollectionAssert.AreEqual(
                 new[] { new Point(0, 0), new Point(0, 1) },
                 board.GetWalls());
         }
@@ -84,7 +94,7 @@ namespace Dojo.Games.Mollymage.Tests
         {
             var board = new MollymageBoard("##&##&###");
 
-            CollectionAssert.AreEquivalent(
+            CollectionAssert.AreEqual(
                 new[] { new Point(2, 1), new Point(2, 2) },
                 board.GetGhosts());
         }
@@ -93,7 +103,7 @@ namespace Dojo.Games.Mollymage.Tests
         public void Test_GetTreasureBoxes()
         {
             var board = new MollymageBoard("҉#҉" + "҉҉҉" + "҉#҉");
-            CollectionAssert.AreEquivalent(
+            CollectionAssert.AreEqual(
                 new[] { new Point(1, 0), new Point(1, 2) },
             board.GetTreasureBoxes());
         }
@@ -102,7 +112,7 @@ namespace Dojo.Games.Mollymage.Tests
         public void Test_GetPotions()
         {
             var board = new MollymageBoard("12345#☻♠#");
-            CollectionAssert.AreEquivalent(
+            CollectionAssert.AreEqual(
                 new[] { new Point(0, 0), new Point(0, 1), new Point(0, 2),
                 new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(2, 2) },
                 board.GetPotions());
@@ -112,7 +122,7 @@ namespace Dojo.Games.Mollymage.Tests
         public void Test_GetBlasts()
         {
             var board = new MollymageBoard("########҉");
-            CollectionAssert.AreEquivalent(
+            CollectionAssert.AreEqual(
                     new[] { new Point(2, 0) }, 
                     board.GetBlasts());
         }
@@ -121,7 +131,7 @@ namespace Dojo.Games.Mollymage.Tests
         public void Test_GetPerks()
         {
             var board = new MollymageBoard("#cr" + "#i+" + "#TA");
-            CollectionAssert.AreEquivalent(
+            CollectionAssert.AreEqual(
                 new[] { new Point(1, 0), new Point(1, 1), new Point(1, 2),
                     new Point(2, 0), new Point(2, 1), new Point(2, 2) },
                 board.GetPerks());
@@ -153,10 +163,12 @@ namespace Dojo.Games.Mollymage.Tests
             /*012345678*/
             "\n" +
             "Hero at: [1,4]\n" +
-            "Other heroes at: [3,7][5,5][7,5][7,7]\n" +
-            "Ghosts at: [1,1][3,1][5,6]\n" +
-            "Potions at: [1,7][2,6][3,5][4,4][7,3][7,5][7,7]\n" +
-            "Blasts at: [5,2][6,2][7,2]\n" +
+            "Other heroes at: [3,7],[5,5],[7,5],[7,7]\n" +
+            "Enemy heroes at: [4,3]\n" +
+            "Ghosts at: [1,1],[3,1],[5,6]\n" +
+            "Treasure Boxes at: [1,5],[1,6]\n" +
+            "Potions at: [1,7],[2,6],[3,5],[4,4],[7,3],[7,5],[7,7]\n" +
+            "Blasts at: [5,2],[6,2],[7,2]\n" +
             "Expected blasts at: [2,7]", board.ToString());
         }
     }

@@ -158,7 +158,7 @@ namespace Dojo
             {
                 var boardString = response.Substring(_responsePrefix.Length);
 
-                var board = GetCameBoard(boardString);
+                var board = GetGameBoard(boardString);
                 //Just print current state (gameBoard) to console
                 Console.Clear();
                 Console.SetCursorPosition(0, 0);
@@ -190,7 +190,7 @@ namespace Dojo
             return (ISolver)Activator.CreateInstance(needType);
         }
 
-        private IBoard GetCameBoard(string boardString)
+        private IBoard GetGameBoard(string boardString)
         {
             var boardInterfaceType = typeof(IBoard);
             var types = Assembly.GetExecutingAssembly()
