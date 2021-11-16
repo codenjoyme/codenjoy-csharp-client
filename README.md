@@ -11,6 +11,7 @@ This is enough to connect and participate in the competition.
 The are two options. \
 If you have .Net 6.0 and Visual Studio, you can open `Project.sln`, then build run. \
 If you do not have .Net 6.0 and Visual Studio, you need do following:
+- open `0-settings.bat` and set GAME_TO_RUN in lowercase and BOARD_URL variables.
 - open cmd.exe in client folder.
 - execute `0-settings.bat`. This is sets up some needed varibles.
 - execute `1-download-env.bat`. This downloads .Net6.0 portable version and unpack its.
@@ -37,3 +38,4 @@ or count the number of elements of a certain type near the coordinate by calling
 Writing tests will allow you to create conclusive evidence of the correctness of the existing code. This is your faithful friend, who is always ready to answer the question: "Is everything working as I expect? The new code did not break my existing logic?".
 The `games/<gamename>/BoardTest` class contains a set of tests that check board tools. Implementation of new methods should be accompanied by writing new tests and checking the results of processing existing ones.
 Use `games/<gamename>/SolverTest` to check the bot's behavior for a specific game scenario.
+To run tests from CLI use `4-test.bat`

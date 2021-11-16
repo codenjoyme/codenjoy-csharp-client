@@ -33,18 +33,24 @@ namespace Dojo.Games.Mollymage
 
         public Point GetHero()
         {
-            return Get(Element.HERO)
-                    .Concat(Get(Element.POTION_HERO))
-                    .Concat(Get(Element.DEAD_HERO))
-                    .Last();
+            var points = Get(Element.HERO, Element.POTION_HERO, Element.DEAD_HERO);
+
+            if (!points.Any())
+            {
+                throw new NullReferenceException("Hero element has not been found.");
+            }
+
+            return points.FirstOrDefault();
         }
 
         public List<Point> GetOtherHeroes()
         {
-            return Get(Element.OTHER_HERO)
-                .Concat(Get(Element.OTHER_POTION_HERO))
-                .Concat(Get(Element.OTHER_DEAD_HERO))
-                .ToList();
+            return Get(Element.OTHER_HERO, Element.OTHER_POTION_HERO, Element.OTHER_DEAD_HERO).ToList();
+        }
+
+        public List<Point> GetEnemyHeroes()
+        {
+            return Get(Element.ENEMY_HERO, Element.ENEMY_POTION_HERO, Element.ENEMY_DEAD_HERO).ToList();
         }
 
         public bool IsGameOver
@@ -68,21 +74,21 @@ namespace Dojo.Games.Mollymage
             return string.Format("{0}\n" +
                      "Hero at: {1}\n" +
                      "Other heroes at: {2}\n" +
-                     "Ghosts at: {3}\n" +
-                     "Treasure Boxes at: {4}\n" +
-                     "Potions as: {5}\n" +
-                     "Blasts: {6}\n" +
-                     "Expected blasts at: {7}\n" +
-                     "Perks at: {8}",
+                     "Enemy heroes at: {3}\n" +
+                     "Ghosts at: {4}\n" +
+                     "Treasure Boxes at: {5}\n" +
+                     "Potions at: {6}\n" +
+                     "Blasts at: {7}\n" +
+                     "Expected blasts at: {8}",
                      BoardAsString(),
                      GetHero(),
                      GetOtherHeroes().ListAsString(),
+                     GetEnemyHeroes().ListAsString(),
                      GetGhosts().ListAsString(),
                      GetTreasureBoxes().ListAsString(),
                      GetPotions().ListAsString(),
                      GetBlasts().ListAsString(),
-                     GetFutureBlasts().ListAsString(),
-                     GetPerks().ListAsString());
+                     GetFutureBlasts().ListAsString());
         }
 
         public List<Point> GetBarrier()
@@ -93,6 +99,7 @@ namespace Dojo.Games.Mollymage
                 .Concat(GetTreasureBoxes())
                 .Concat(GetOtherHeroes())
                 .Distinct()
+                .OrderBy(pt => pt.X).ThenBy(pt => pt.Y)
                 .ToList();
         }
 
@@ -121,6 +128,7 @@ namespace Dojo.Games.Mollymage
                 .Concat(Get(Element.POTION_TIMER_5))
                 .Concat(Get(Element.POTION_HERO))
                 .Concat(Get(Element.OTHER_POTION_HERO))
+                .OrderBy(pt => pt.X).ThenBy(pt => pt.Y)
                 .ToList();
         }
 
@@ -131,6 +139,8 @@ namespace Dojo.Games.Mollymage
                 .Concat(Get(Element.POTION_IMMUNE))
                 .Concat(Get(Element.POTION_REMOTE_CONTROL))
                 .Concat(Get(Element.POISON_THROWER))
+                .Concat(Get(Element.POTION_EXPLODER))
+                .OrderBy(pt => pt.X).ThenBy(pt => pt.Y)
                 .ToList();
         }
 
@@ -141,7 +151,7 @@ namespace Dojo.Games.Mollymage
 
         public List<Point> GetFutureBlasts()
         {
-            var potions = GetPotions();
+            var potions = Get(Element.POTION_TIMER_1);
             var result = new List<Point>();
             foreach (var potion in potions)
             {
@@ -152,7 +162,7 @@ namespace Dojo.Games.Mollymage
                 result.Add(potion.ShiftBottom());
             }
 
-            return result.Where(blast => !blast.IsOutOf(Size) && !GetWalls().Contains(blast)).Distinct().ToList();
+            return result.Where(blast => !blast.IsOutOf(Size) && !GetBarrier().Contains(blast)).Distinct().ToList();
         }
 
         public bool IsBarrierAt(Point point)
