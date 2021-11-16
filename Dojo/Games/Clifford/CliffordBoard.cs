@@ -14,31 +14,31 @@ namespace Dojo.Games.Clifford
         {
         }
 
-        internal List<Point> GetBarriers()
+        public List<Point> GetBarriers()
         {
             var result = GetRelativeElements(GetWallsElements());
             return result;
         }
 
-        internal Point GetHero()
+        public Point GetHero()
         {
             var result = GetRelativeElements(GetHeroesElements()).Last();
             return result;
         }
 
-        internal List<Point> GetOtherHeroes()
+        public List<Point> GetOtherHeroes()
         {
             var result = GetRelativeElements(GetOtherHeroesElements());
             return result;
         }
 
-        internal List<Point> GetRobbers()
+        public List<Point> GetRobbers()
         {
             var result = GetRelativeElements(GetRobbersElements());
             return result;
         }
 
-        internal List<Point> GetEnemyHeroes()
+        public List<Point> GetEnemyHeroes()
         {
             var result = GetRelativeElements(GetEnemyHeroElements());
             return result;
@@ -50,33 +50,57 @@ namespace Dojo.Games.Clifford
             return result;
         }
 
-        internal List<Point> GetPipes()
+        public List<Point> GetPipes()
         {
             var result = GetRelativeElements(GetPipesElements());
             return result;
         }
 
-        internal List<Point> GetClues()
+        public List<Point> GetPits()
+        {
+            var result = GetRelativeElements(GetPitsElements());
+            return result;
+        }
+
+        public List<Point> GetClues()
         {
             var result = GetRelativeElements(GetCluesElements());
             return result;
         }
 
-        internal List<Point> GetOpenDoors()
+        public List<Point> GetBackways()
+        {
+            var result = GetRelativeElements(GetBackwaysElements());
+            return result;
+        }
+
+        public List<Point> GetPotions()
+        {
+            var result = GetRelativeElements(GetPotionsElements());
+            return result;
+        }
+
+        public List<Point> GetDoors()
+        {
+            var result = GetRelativeElements(GetDoorsElements());
+            return result;
+        }
+
+        public List<Point> GetOpenDoors()
         {
             var result = GetRelativeElements(GetOpenDoorsElements());
             return result;
         }
 
-        internal List<Point> GetCloseDoors()
+        public List<Point> GetCloseDoors()
         {
             var result = GetRelativeElements(GetCloseDoorsElements());
             return result;
         }
 
-        internal List<Point> GetKeys()
+        public List<Point> GetKeys()
         {
-            var result = GetRelativeElements(GetCloseDoorsElements());
+            var result = GetRelativeElements(GetKeysElements());
             return result;
         }
 
@@ -85,7 +109,8 @@ namespace Dojo.Games.Clifford
         {
             get
             {
-                return BoardString.Contains((char)CliffordElement.HERO_DIE);
+                return BoardString.Contains((char)CliffordElement.HERO_DIE)
+                    || BoardString.Contains((char)CliffordElement.HERO_MASK_DIE);
             }
         }
 
@@ -281,6 +306,35 @@ namespace Dojo.Games.Clifford
             };
         }
 
+        internal static List<CliffordElement> GetBackwaysElements()
+        {
+            return new List<CliffordElement>
+            {
+                CliffordElement.BACKWAY
+            };
+        }
+
+        internal static List<CliffordElement> GetPotionsElements()
+        {
+            return new List<CliffordElement>
+            {
+                CliffordElement.MASK_POTION
+            };
+        }
+
+        internal static List<CliffordElement> GetDoorsElements()
+        {
+            return new List<CliffordElement>
+            {
+                CliffordElement.OPENED_DOOR_GOLD,
+                CliffordElement.OPENED_DOOR_SILVER,
+                CliffordElement.OPENED_DOOR_BRONZE,
+                CliffordElement.CLOSED_DOOR_GOLD,
+                CliffordElement.CLOSED_DOOR_SILVER,
+                CliffordElement.CLOSED_DOOR_BRONZE
+            };
+        }
+
         internal static List<CliffordElement> GetOpenDoorsElements()
         {
             return new List<CliffordElement>
@@ -308,6 +362,18 @@ namespace Dojo.Games.Clifford
                 CliffordElement.KEY_GOLD,
                 CliffordElement.KEY_SILVER,
                 CliffordElement.KEY_BRONZE
+            };
+        }
+
+        internal static List<CliffordElement> GetPitsElements()
+        {
+            return new List<CliffordElement>
+            {
+                CliffordElement.CRACK_PIT,
+                CliffordElement.PIT_FILL_1,
+                CliffordElement.PIT_FILL_2,
+                CliffordElement.PIT_FILL_3,
+                CliffordElement.PIT_FILL_4
             };
         }
 
