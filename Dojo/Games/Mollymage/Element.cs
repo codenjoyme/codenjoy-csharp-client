@@ -121,6 +121,20 @@ namespace Dojo.Games.Mollymage
         // Temporary.
         POISON_THROWER = (short)'T',
 
+        // Hero can explode all potions on the field. Using: ACT(2).
+        // Temporary.
+        POTION_EXPLODER = (short)'A',
+
+        // This is what enemy heroes looks like.
+        ENEMY_HERO = (short)'ö',
+
+        // This is if enemy hero is sitting on own potion.
+        ENEMY_POTION_HERO = (short)'Ö',
+
+        // Enemy hero corpse (it will disappear shortly, right on the
+        // next move). If you've done it you'll get score points.
+        ENEMY_DEAD_HERO = (short)'ø',
+
         /// a void
         // This is the only place where you can move your Molly.
         NONE = (short)' '

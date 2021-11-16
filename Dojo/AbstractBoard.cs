@@ -31,7 +31,7 @@ namespace Dojo
 
         public AbstractBoard(string boardString)
         {
-            BoardString = boardString.Replace("\n", "");
+            BoardString = boardString.Replace("\n", "").Replace("board=", "");
             LengthXY = new LengthToXY(Size);
         }
 
@@ -94,7 +94,7 @@ namespace Dojo
             return resultList;
         }
 
-        public List<Point> Get(T element)
+        public List<Point> Get(params T[] elements)
         {
             var result = new List<Point>();
 
@@ -102,13 +102,13 @@ namespace Dojo
             {
                 var pt = LengthXY.GetXY(i);
 
-                if (IsAt(pt, element))
+                if (elements.Contains(GetAt(pt)))
                 {
                     result.Add(pt);
                 }
             }
 
-            return result;
+            return result.OrderBy(pt => pt.X).ThenBy(pt => pt.Y).ToList();
         }
 
         public bool IsAnyOfAt(Point point, params T[] elements)
