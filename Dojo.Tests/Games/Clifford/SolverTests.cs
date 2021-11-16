@@ -2,7 +2,8 @@
 
 namespace Dojo.Games.Clifford.Tests
 {
-    internal class SolverTests
+    [Category("clifford")]
+    public class SolverTests
     {
     }
 }

@@ -4,6 +4,7 @@ using System;
 namespace Dojo.Games.Clifford.Tests
 {
     [TestFixture]
+    [Category("clifford")]
     public class BoardTests
     {
         [Test]

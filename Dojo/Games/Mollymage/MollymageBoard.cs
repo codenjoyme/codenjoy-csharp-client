@@ -24,7 +24,7 @@ using Dojo.Infrastructure;
 
 namespace Dojo.Games.Mollymage
 {
-    public class MollymageBoard : AbstractBoard<Element>
+    public class MollymageBoard : AbstractBoard<MollymageElement>
     {
         public MollymageBoard(string boardString)
             : base(boardString)
@@ -33,7 +33,7 @@ namespace Dojo.Games.Mollymage
 
         public Point GetHero()
         {
-            var points = Get(Element.HERO, Element.POTION_HERO, Element.DEAD_HERO);
+            var points = Get(MollymageElement.HERO, MollymageElement.POTION_HERO, MollymageElement.DEAD_HERO);
 
             if (!points.Any())
             {
@@ -45,25 +45,25 @@ namespace Dojo.Games.Mollymage
 
         public List<Point> GetOtherHeroes()
         {
-            return Get(Element.OTHER_HERO, Element.OTHER_POTION_HERO, Element.OTHER_DEAD_HERO).ToList();
+            return Get(MollymageElement.OTHER_HERO, MollymageElement.OTHER_POTION_HERO, MollymageElement.OTHER_DEAD_HERO).ToList();
         }
 
         public List<Point> GetEnemyHeroes()
         {
-            return Get(Element.ENEMY_HERO, Element.ENEMY_POTION_HERO, Element.ENEMY_DEAD_HERO).ToList();
+            return Get(MollymageElement.ENEMY_HERO, MollymageElement.ENEMY_POTION_HERO, MollymageElement.ENEMY_DEAD_HERO).ToList();
         }
 
         public bool IsGameOver
         {
             get
             {
-                return BoardString.Contains((char)Element.DEAD_HERO);
+                return BoardString.Contains((char)MollymageElement.DEAD_HERO);
             }
         }
 
-        public Element GetAt(Point point)
+        public MollymageElement GetAt(Point point)
         {
-            return GetAt(point, Element.WALL);
+            return GetAt(point, MollymageElement.WALL);
         }
 
         /// <summary>
@@ -105,53 +105,53 @@ namespace Dojo.Games.Mollymage
 
         public List<Point> GetGhosts()
         {
-            return Get(Element.GHOST);
+            return Get(MollymageElement.GHOST);
         }
 
 
         public List<Point> GetWalls()
         {
-            return Get(Element.WALL);
+            return Get(MollymageElement.WALL);
         }
 
         public List<Point> GetTreasureBoxes()
         {
-            return Get(Element.TREASURE_BOX);
+            return Get(MollymageElement.TREASURE_BOX);
         }
 
         public List<Point> GetPotions()
         {
-            return Get(Element.POTION_TIMER_1)
-                .Concat(Get(Element.POTION_TIMER_2))
-                .Concat(Get(Element.POTION_TIMER_3))
-                .Concat(Get(Element.POTION_TIMER_4))
-                .Concat(Get(Element.POTION_TIMER_5))
-                .Concat(Get(Element.POTION_HERO))
-                .Concat(Get(Element.OTHER_POTION_HERO))
+            return Get(MollymageElement.POTION_TIMER_1)
+                .Concat(Get(MollymageElement.POTION_TIMER_2))
+                .Concat(Get(MollymageElement.POTION_TIMER_3))
+                .Concat(Get(MollymageElement.POTION_TIMER_4))
+                .Concat(Get(MollymageElement.POTION_TIMER_5))
+                .Concat(Get(MollymageElement.POTION_HERO))
+                .Concat(Get(MollymageElement.OTHER_POTION_HERO))
                 .OrderBy(pt => pt.X).ThenBy(pt => pt.Y)
                 .ToList();
         }
 
         public List<Point> GetPerks()
         {
-            return Get(Element.POTION_BLAST_RADIUS_INCREASE)
-                .Concat(Get(Element.POTION_COUNT_INCREASE))
-                .Concat(Get(Element.POTION_IMMUNE))
-                .Concat(Get(Element.POTION_REMOTE_CONTROL))
-                .Concat(Get(Element.POISON_THROWER))
-                .Concat(Get(Element.POTION_EXPLODER))
+            return Get(MollymageElement.POTION_BLAST_RADIUS_INCREASE)
+                .Concat(Get(MollymageElement.POTION_COUNT_INCREASE))
+                .Concat(Get(MollymageElement.POTION_IMMUNE))
+                .Concat(Get(MollymageElement.POTION_REMOTE_CONTROL))
+                .Concat(Get(MollymageElement.POISON_THROWER))
+                .Concat(Get(MollymageElement.POTION_EXPLODER))
                 .OrderBy(pt => pt.X).ThenBy(pt => pt.Y)
                 .ToList();
         }
 
         public List<Point> GetBlasts()
         {
-            return Get(Element.BOOM);
+            return Get(MollymageElement.BOOM);
         }
 
         public List<Point> GetFutureBlasts()
         {
-            var potions = Get(Element.POTION_TIMER_1);
+            var potions = Get(MollymageElement.POTION_TIMER_1);
             var result = new List<Point>();
             foreach (var potion in potions)
             {
