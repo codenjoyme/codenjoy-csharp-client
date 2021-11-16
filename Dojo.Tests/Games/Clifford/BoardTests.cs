@@ -43,6 +43,9 @@ namespace Dojo.Games.Clifford.Tests
 
             board = new CliffordBoard("########⍃");
             Assert.AreEqual(new Point(2, 0), board.GetHero());
+
+            board = new CliffordBoard("⍃Ѡ Y◄►]{ ");
+            Assert.AreEqual(new Point(0, 0), board.GetHero());
         }
 
         [Test]
@@ -68,6 +71,9 @@ namespace Dojo.Games.Clifford.Tests
 
             board = new CliffordBoard("########ᐊ");
             Assert.AreEqual(new Point(2, 0), board.GetHero());
+
+            board = new CliffordBoard("⍃Ѡ Y◄►]{ ");
+            Assert.AreEqual(new Point(0, 0), board.GetHero());
         }
 
         [Test]
@@ -75,8 +81,8 @@ namespace Dojo.Games.Clifford.Tests
         {
             var board = new CliffordBoard("#########");
 
-            var ex = Assert.Throws<InvalidOperationException>(() => board.GetHero());
-            Assert.That(ex.Message, Is.EqualTo("Sequence contains no elements"));
+            var ex = Assert.Throws<NullReferenceException>(() => board.GetHero());
+            Assert.That(ex.Message, Is.EqualTo("Hero element has not been found."));
         }
 
         [Test]
@@ -201,6 +207,37 @@ namespace Dojo.Games.Clifford.Tests
             CollectionAssert.AreEquivalent(
                 new[] { new Point(0, 2), new Point(1, 2), new Point(2, 2) },
                 board.GetKeys());
+        }
+
+        [Test]
+        public void Test_Report()
+        {
+            var board = new CliffordBoard("board=" +
+                      "☼☼☼☼☼☼☼☼☼" +
+                      "☼ ►*## $☼" +
+                      "☼ H ⧒⧒ ✼☼" +
+                      "☼ H  1 ⍍☼" +
+                      "☼S   &  ☼" +
+                      "☼ ✦ ~~~ ☼" +
+                      "☼Z3 ⌺   ☼" +
+                      "☼ @@  Q ☼" +
+                      "☼☼☼☼☼☼☼☼☼");
+            Assert.AreEqual("☼☼☼☼☼☼☼☼☼\n" +
+                         "☼ ►*## $☼\n" +
+                         "☼ H ⧒⧒ ✼☼\n" +
+                         "☼ H  1 ⍍☼\n" +
+                         "☼S   &  ☼\n" +
+                         "☼ ✦ ~~~ ☼\n" +
+                         "☼Z3 ⌺   ☼\n" +
+                         "☼ @@  Q ☼\n" +
+                         "☼☼☼☼☼☼☼☼☼\n" +
+            "\n" +
+            "Hero at: [2,7]\n"+
+            "Other heroes at: [1,2]\n"+
+            "Enemy heroes at: [4,6],[5,6]\n"+
+            "Robbers at: [6,1]\n"+
+            "Mask potions at: [1,4]\n"+
+            "Keys at: [2,3],[7,6]", board.ToString());
         }
     }
 }

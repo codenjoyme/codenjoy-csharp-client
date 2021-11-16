@@ -22,8 +22,14 @@ namespace Dojo.Games.Clifford
 
         public Point GetHero()
         {
-            var result = GetRelativeElements(GetHeroesElements()).Last();
-            return result;
+            var result = GetRelativeElements(GetHeroesElements());
+
+            if (result.Count == 0)
+            {
+                throw new NullReferenceException("Hero element has not been found.");
+            }
+
+            return result[0];
         }
 
         public List<Point> GetOtherHeroes()
@@ -489,26 +495,18 @@ namespace Dojo.Games.Clifford
         {
             return string.Format("{0}\n" +
                      "Hero at: {1}\n" +
-                     "Enemy heroes at: {2}\n" +
                      "Other heroes at: {2}\n" +
-                     "Robbers at: {3}\n" +
-                     "Ladders at: {4}\n" +
-                     "Pipes at: {5}\n" +
-                     "Clues at: {6}\n" +
-                     "Keys at: {7}\n" +
-                     "Open doors at: {8}\n" +
-                     "Close doors at: {9}",
+                     "Enemy heroes at: {3}\n" +
+                     "Robbers at: {4}\n" +
+                     "Mask potions at: {5}\n" +
+                     "Keys at: {6}",
                      BoardAsString(),
                      GetHero(),
-                     GetEnemyHeroes().ListAsString(),
                      GetOtherHeroes().ListAsString(),
+                     GetEnemyHeroes().ListAsString(),
                      GetRobbers().ListAsString(),
-                     GetLadders().ListAsString(),
-                     GetPipes().ListAsString(),
-                     GetClues().ListAsString(),
-                     GetKeys().ListAsString(),
-                     GetOpenDoors().ListAsString(),
-                     GetCloseDoors().ListAsString());
+                     GetPotions().ListAsString(),
+                     GetKeys().ListAsString());
         }
     }
 }

@@ -89,8 +89,7 @@ namespace Dojo
                 resultList.AddRange(Get(item).AsEnumerable());
             }
 
-            resultList = resultList.Distinct()
-                                   .ToList();
+            resultList = resultList.Distinct().OrderBy(x => x.X).ThenBy(x => x.Y).ToList();
             return resultList;
         }
 
