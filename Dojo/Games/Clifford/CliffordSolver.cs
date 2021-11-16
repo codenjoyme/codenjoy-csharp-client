@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dojo.Games.Clifford
 {
-    internal class CliffordSolver : ISolver
+    public class CliffordSolver : ISolver
     {
         public string Get(IBoard gameBoard)
         {

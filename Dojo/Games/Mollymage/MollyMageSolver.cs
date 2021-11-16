@@ -25,7 +25,7 @@ namespace Dojo.Games.Mollymage
     /// <summary>
     /// This is HeroAI client demo.
     /// </summary>
-    public class MollyMageSolver : ISolver
+    public class MollymageSolver : ISolver
     {
         public string Get(IBoard gameBoard)
         {

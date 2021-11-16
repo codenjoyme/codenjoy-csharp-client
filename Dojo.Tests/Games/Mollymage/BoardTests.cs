@@ -15,7 +15,7 @@ namespace Dojo.Games.Mollymage.Tests
         public void Test_GetAt_InvalidPoint()
         {
             var board = new MollymageBoard("#########");
-            Assert.AreEqual(Element.WALL, board.GetAt(new Point(-1, -1)));
+            Assert.AreEqual(MollymageElement.WALL, board.GetAt(new Point(-1, -1)));
         }
 
         [Test]
