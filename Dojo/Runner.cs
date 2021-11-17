@@ -39,9 +39,10 @@ namespace Dojo
         private bool _shouldExit;
 
         private WebSocket _gameServer;
+        private ISolver _solver;
 
         // Select your game
-        private string _game = "clifford";
+        private string _game = "mollymage";
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
@@ -75,6 +76,16 @@ namespace Dojo
                 Console.WriteLine("Runner");
             }
 
+            // for Docker containers
+            var url = Environment.GetEnvironmentVariable("SERVER_URL_VAR");
+            var game = Environment.GetEnvironmentVariable("GAME_TO_RUN_VAR");
+
+            if (!string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(game))
+            {
+                _game = game;
+                _url = url;
+            }
+
             Console.WriteLine($"GAME: {_game}");
             Console.WriteLine($"URL: {_url}");
 
@@ -83,7 +94,7 @@ namespace Dojo
 
             Play();
 
-            Console.ReadKey();
+            Console.Read();
         }
 
         /// <summary>
@@ -94,6 +105,7 @@ namespace Dojo
             _gameServer = new WebSocket(_webSocketUrl);
             _gameServer.SslConfiguration.EnabledSslProtocols = SslProtocols.Tls12;
 
+            _solver = GetGameSolver();
             _gameServer.OnMessage += Socket_OnMessage;
             _gameServer.OnClose += async (s, e) => await ReconnectAsync(e.WasClean, e.Code);
 
@@ -152,8 +164,7 @@ namespace Dojo
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine(board.ToString());
 
-                var solver = GetGameSolver();
-                var action = solver.Get(board);
+                var action = _solver.Get(board);
 
                 Console.WriteLine("Answer: " + action);
                 Console.SetCursorPosition(0, 0);
