@@ -46,7 +46,7 @@ namespace Dojo
 
         // Paste here board page url from browser after registration,
         // or put it as command line parameter.
-        private string _url = "https://dojorena.io/codenjoy-contest/board/player/dojorena761?code=00000000000000";
+        private string _url = "http://127.0.0.1:8080/codenjoy-contest/board/player/0?code=000000000000";
 
         private static bool IsAllowedToReconnect(ushort code)
         {
