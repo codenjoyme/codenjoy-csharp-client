@@ -85,11 +85,11 @@ namespace Dojo.Games.Clifford
             // Your hero is dead. In the next tick, it will disappear and
             // appear in a new location.
 
-        HERO_DIE = (short)'Ѡ',
+        HERO_DIE = (short)'O',
 
             // Your hero is climbing the ladder.
 
-        HERO_LADDER = (short)'Y',
+        HERO_LADDER = (short)'A',
 
             // Your hero runs to the left.
 
@@ -101,225 +101,225 @@ namespace Dojo.Games.Clifford
 
             // Your hero is falling.
 
-        HERO_FALL = (short)']',
+        HERO_FALL = (short)'U',
 
             // Your hero is crawling along the pipe.
 
-        HERO_PIPE = (short)'{',
+        HERO_PIPE = (short)'I',
 
             // Your hero in the pit.
 
-        HERO_PIT = (short)'⍃',
+        HERO_PIT = (short)'E',
 
             // Your shadow-hero is dead. In the next tick, it will
             // disappear and appear in a new location.
 
-        HERO_MASK_DIE = (short)'x',
+        HERO_MASK_DIE = (short)'o',
 
             // Your shadow-hero is climbing the ladder.
 
-        HERO_MASK_LADDER = (short)'⍬',
+        HERO_MASK_LADDER = (short)'a',
 
             // Your shadow-hero runs to the left.
 
-        HERO_MASK_LEFT = (short)'⊲',
+        HERO_MASK_LEFT = (short)'h',
 
             // Your shadow-hero runs to the right.
 
-        HERO_MASK_RIGHT = (short)'⊳',
+        HERO_MASK_RIGHT = (short)'w',
 
             // Your shadow-hero is falling.
 
-        HERO_MASK_FALL = (short)'⊅',
+        HERO_MASK_FALL = (short)'u',
 
             // Your shadow-hero is crawling along the pipe.
 
-        HERO_MASK_PIPE = (short)'⋜',
+        HERO_MASK_PIPE = (short)'i',
 
             // Your shadow-hero in the pit.
 
-        HERO_MASK_PIT = (short)'ᐊ',
+        HERO_MASK_PIT = (short)'e',
 
             // Other hero is dead. In the next tick, it will disappear and
             // appear in a new location.
 
-        OTHER_HERO_DIE = (short)'Z',
+        OTHER_HERO_DIE = (short)'C',
 
             // Other hero is climbing the ladder.
 
-        OTHER_HERO_LADDER = (short)'U',
+        OTHER_HERO_LADDER = (short)'D',
 
             // Other hero runs to the left.
 
-        OTHER_HERO_LEFT = (short)')',
+        OTHER_HERO_LEFT = (short)'«',
 
             // Other hero runs to the right.
 
-        OTHER_HERO_RIGHT = (short)'(',
+        OTHER_HERO_RIGHT = (short)'»',
 
             // Other hero is falling.
 
-        OTHER_HERO_FALL = (short)'⊐',
+        OTHER_HERO_FALL = (short)'F',
 
             // Other hero is crawling along the pipe.
 
-        OTHER_HERO_PIPE = (short)'Э',
+        OTHER_HERO_PIPE = (short)'J',
 
             // Other hero in the pit.
 
-        OTHER_HERO_PIT = (short)'ᗉ',
+        OTHER_HERO_PIT = (short)'K',
 
             // Other shadow-hero is dead. In the next tick, it will
             // disappear and appear in a new location.
 
-        OTHER_HERO_MASK_DIE = (short)'⋈',
+        OTHER_HERO_MASK_DIE = (short)'c',
 
             // Other shadow-hero is climbing the ladder.
 
-        OTHER_HERO_MASK_LADDER = (short)'⋕',
+        OTHER_HERO_MASK_LADDER = (short)'d',
 
             // Other shadow-hero runs to the left.
 
-        OTHER_HERO_MASK_LEFT = (short)'⋊',
+        OTHER_HERO_MASK_LEFT = (short)'Z',
 
             // Other shadow-hero runs to the right.
 
-        OTHER_HERO_MASK_RIGHT = (short)'⋉',
+        OTHER_HERO_MASK_RIGHT = (short)'z',
 
             // Other shadow-hero is falling.
 
-        OTHER_HERO_MASK_FALL = (short)'⋣',
+        OTHER_HERO_MASK_FALL = (short)'f',
 
             // Other shadow-hero is crawling along the pipe.
 
-        OTHER_HERO_MASK_PIPE = (short)'⊣',
+        OTHER_HERO_MASK_PIPE = (short)'j',
 
             // Other shadow-hero in the pit.
 
-        OTHER_HERO_MASK_PIT = (short)'ᗏ',
+        OTHER_HERO_MASK_PIT = (short)'k',
 
             // Enemy hero is dead. In the next tick, it will disappear and
             // appear in a new location.
 
-        ENEMY_HERO_DIE = (short)'Ž',
+        ENEMY_HERO_DIE = (short)'L',
 
             // Enemy hero is climbing the ladder.
 
-        ENEMY_HERO_LADDER = (short)'Ǔ',
+        ENEMY_HERO_LADDER = (short)'N',
 
             // Enemy hero runs to the left.
 
-        ENEMY_HERO_LEFT = (short)'❫',
+        ENEMY_HERO_LEFT = (short)'P',
 
             // Enemy hero runs to the right.
 
-        ENEMY_HERO_RIGHT = (short)'❪',
+        ENEMY_HERO_RIGHT = (short)'Q',
 
             // Enemy hero is falling.
 
-        ENEMY_HERO_FALL = (short)'⋥',
+        ENEMY_HERO_FALL = (short)'R',
 
             // Enemy hero is crawling along the pipe.
 
-        ENEMY_HERO_PIPE = (short)'Ǯ',
+        ENEMY_HERO_PIPE = (short)'T',
 
             // Enemy hero in the pit.
 
-        ENEMY_HERO_PIT = (short)'⇇',
+        ENEMY_HERO_PIT = (short)'V',
 
             // Enemy shadow-hero is dead. In the next tick, it will
             // disappear and appear in a new location.
 
-        ENEMY_HERO_MASK_DIE = (short)'⧓',
+        ENEMY_HERO_MASK_DIE = (short)'l',
 
             // Enemy shadow-hero is climbing the ladder.
 
-        ENEMY_HERO_MASK_LADDER = (short)'≠',
+        ENEMY_HERO_MASK_LADDER = (short)'n',
 
             // Enemy shadow-hero runs to the left.
 
-        ENEMY_HERO_MASK_LEFT = (short)'⧒',
+        ENEMY_HERO_MASK_LEFT = (short)'p',
 
             // Enemy shadow-hero runs to the right.
 
-        ENEMY_HERO_MASK_RIGHT = (short)'⧑',
+        ENEMY_HERO_MASK_RIGHT = (short)'q',
 
             // Enemy shadow-hero is falling.
 
-        ENEMY_HERO_MASK_FALL = (short)'⌫',
+        ENEMY_HERO_MASK_FALL = (short)'r',
 
             // Enemy shadow-hero is crawling along the pipe.
 
-        ENEMY_HERO_MASK_PIPE = (short)'❵',
+        ENEMY_HERO_MASK_PIPE = (short)'t',
 
             // Enemy shadow-hero in the pit.
 
-        ENEMY_HERO_MASK_PIT = (short)'⬱',
+        ENEMY_HERO_MASK_PIT = (short)'v',
 
             // Robber is climbing the ladder.
 
-        ROBBER_LADDER = (short)'Q',
+        ROBBER_LADDER = (short)'X',
 
             // Robber runs to the left. Robber picks up the nearest prey
             // and hunts for it until it overtakes it.
 
-        ROBBER_LEFT = (short)'«',
+        ROBBER_LEFT = (short)')',
 
             // Robber runs to the right. Robber picks up the nearest prey
             // and hunts for it until it overtakes it.
 
-        ROBBER_RIGHT = (short)'»',
+        ROBBER_RIGHT = (short)'(',
 
             // Robber is falling.
 
-        ROBBER_FALL = (short)'‹',
+        ROBBER_FALL = (short)'x',
 
             // Robber is crawling along the pipe.
 
-        ROBBER_PIPE = (short)'<',
+        ROBBER_PIPE = (short)'Y',
 
             // Robber in the pit.
 
-        ROBBER_PIT = (short)'⍇',
+        ROBBER_PIT = (short)'y',
 
             // Opened golden gates. Can only be locked with a golden key.
 
-        OPENED_DOOR_GOLD = (short)'⍙',
+        OPENED_DOOR_GOLD = (short)'g',
 
             // Opened silver gates. Can only be locked with a silver key.
 
-        OPENED_DOOR_SILVER = (short)'⍚',
+        OPENED_DOOR_SILVER = (short)'s',
 
             // Opened bronze gates. Can only be locked with a bronze key.
 
-        OPENED_DOOR_BRONZE = (short)'⍜',
+        OPENED_DOOR_BRONZE = (short)'b',
 
             // Closed golden gates. Can only be opened with a golden key.
 
-        CLOSED_DOOR_GOLD = (short)'⍍',
+        CLOSED_DOOR_GOLD = (short)'G',
 
             // Closed silver gates. Can only be opened with a silver key.
 
-        CLOSED_DOOR_SILVER = (short)'⌺',
+        CLOSED_DOOR_SILVER = (short)'S',
 
             // Closed bronze gates. Can only be opened with a bronze key.
 
-        CLOSED_DOOR_BRONZE = (short)'⌼',
+        CLOSED_DOOR_BRONZE = (short)'B',
 
             // Bronze key. Helps open/close golden gates. The key can only
             // be used once.
 
-        KEY_GOLD = (short)'✦',
+        KEY_GOLD = (short)'+',
 
             // Silver key. Helps open/close silver gates. The key can only
             // be used once.
 
-        KEY_SILVER = (short)'✼',
+        KEY_SILVER = (short)'-',
 
             // Bronze key. Helps open/close bronze gates. The key can only
             // be used once.
 
-        KEY_BRONZE = (short)'⍟',
+        KEY_BRONZE = (short)'!',
 
             // Bullet. After the shot by the hero, the bullet flies until
             // it meets an obstacle. The bullet kills the hero. It
@@ -340,12 +340,12 @@ namespace Dojo.Games.Clifford
             // Back door - allows the hero to secretly move to another
             // random place on the map.
 
-        BACKWAY = (short)'⊛',
+        BACKWAY = (short)'W',
 
             // Disguise potion - endow the hero with additional abilities.
             // The hero goes into shadow mode.
 
-        MASK_POTION = (short)'S'
+        MASK_POTION = (short)'m'
     }
 }
 
