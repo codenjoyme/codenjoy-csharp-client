@@ -35,7 +35,7 @@ namespace Dojo.Games.Mollymage
         private string Get(MollymageBoard gameBoard)
         {
             // Type here your code
-            return Direction.Act.ToString();
+            return MollymageDirection.ACT;
         }
     }
 }
