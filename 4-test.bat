@@ -4,9 +4,9 @@ echo off
 call lib :color Starting dotnet tests...
 echo on
 
-call %DOT_NET% test
+call %DOTNET% test
 
 rem to run tests for one game only
-rem call %DOT_NET% test --filter "TestCategory=%GAME_TO_RUN%"
+rem call %DOTNET% test --filter "TestCategory=%GAME_TO_RUN%"
 
 call lib :ask

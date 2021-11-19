@@ -4,7 +4,8 @@ echo off
 call lib :color Building dotnet client...
 echo on
 
-call lib :print_color %DOT_NET% -v
-call %DOT_NET% build
+call lib :print_color %DOTNET% -v
+
+call %DOTNET% build
 
 call lib :ask

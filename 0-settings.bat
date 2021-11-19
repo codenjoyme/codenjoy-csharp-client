@@ -20,12 +20,15 @@ if "%INSTALL_LOCALLY%"==""     ( set INSTALL_LOCALLY=true)
 
 if "%INSTALL_LOCALLY%"=="true" ( set NODE_HOME=)
 
-if "%DOT_NET_HOME%"=="" ( set DOT_NET_HOME=%ROOT%\.dotnet)
+if "%DOTNET_HOME%"==""    ( set NO_DOTNET=true)
+if "%NO_DOTNET%"=="true"  ( set DOTNET_HOME=%ROOT%\.dotnet)
+if "%NO_DOTNET%"=="true"  ( set PATH=%DOTNET_HOME%\;%PATH%)
 
-set DOT_NET=%DOT_NET_HOME%\dotnet.exe
+set DOTNET=%DOTNET_HOME%\dotnet.exe
 
 echo off
-call lib :color DOT_NET_HOME=%DOT_NET_HOME%
+call lib :color PATH=%PATH%
+call lib :color DOTNET_HOME=%DOTNET_HOME%
 echo on
 
 set ARCH_URL=https://download.visualstudio.microsoft.com/download/pr/ca65b248-9750-4c2d-89e6-ef27073d5e95/05c682ca5498bfabc95985a4c72ac635/dotnet-sdk-6.0.100-win-x64.zip
