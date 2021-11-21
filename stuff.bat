@@ -43,7 +43,7 @@ call run :init_colors
     goto :eof
 
 :version
-    call run :print_color %DOTNET% --version
+    call run :eval_echo_color ‘%DOTNET% --version‘
     goto :eof
 
 :build
