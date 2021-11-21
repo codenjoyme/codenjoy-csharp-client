@@ -11,7 +11,7 @@ This is enough to connect and participate in the competition.
 The are two options. \
 If you have .Net 6.0 and Visual Studio, you can open `Project.sln`, then build run. \
 If you do not have .Net 6.0 and Visual Studio, you need do following:
-- open `0-settings.bat` and set GAME_TO_RUN in lowercase and BOARD_URL variables.
+- open `0-settings.bat` and set GAME_TO_RUN in lowercase and SERVER_URL variables.
 - open cmd.exe in client folder.
 - execute `0-settings.bat`. This is sets up some needed varibles.
 - execute `1-download-env.bat`. This downloads .Net6.0 portable version and unpack its.
