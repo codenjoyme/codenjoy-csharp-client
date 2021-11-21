@@ -159,15 +159,14 @@ namespace Dojo
                 var boardString = response.Substring(_responsePrefix.Length);
 
                 var board = GetGameBoard(boardString);
-                //Just print current state (gameBoard) to console
-                Console.Clear();
-                Console.SetCursorPosition(0, 0);
+                // Just print current state (gameBoard) to console
                 Console.WriteLine(board.ToString());
+                Console.WriteLine();
 
                 var action = _solver.Get(board);
 
                 Console.WriteLine("Answer: " + action);
-                Console.SetCursorPosition(0, 0);
+                Console.WriteLine();
 
                 ((WebSocket)sender).Send(action);
             }
