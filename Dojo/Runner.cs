@@ -95,13 +95,11 @@ namespace Dojo
             Play();
 
             var input = Console.Read();
-            var flag = Convert.ToChar(input);
-            var key = '9';
+            var key = (int)'9';
 
-            while (flag != key)
+            while (input != key)
             {
                 input = Console.Read();
-                flag = Convert.ToChar(input);
             }
         }
 
