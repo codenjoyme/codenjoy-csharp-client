@@ -94,7 +94,13 @@ namespace Dojo
 
             Play();
 
-            Console.Read();
+            var input = Console.Read();
+            var key = (int)'9';
+
+            while (input != key)
+            {
+                input = Console.Read();
+            }
         }
 
         /// <summary>
