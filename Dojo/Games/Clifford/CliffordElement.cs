@@ -306,7 +306,7 @@ namespace Dojo.Games.Clifford
 
         CLOSED_DOOR_BRONZE = (short)'B',
 
-            // Bronze key. Helps open/close golden gates. The key can only
+            // Golden key. Helps open/close golden gates. The key can only
             // be used once.
 
         KEY_GOLD = (short)'+',
