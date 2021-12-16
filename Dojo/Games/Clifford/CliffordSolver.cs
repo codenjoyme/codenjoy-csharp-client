@@ -16,7 +16,7 @@ namespace Dojo.Games.Clifford
         private string Get(CliffordBoard gameBoard)
         {
             // Type here your code
-            return Direction.Right.ToString();
+            return CliffordDirection.RIGHT;
         }
     }
 }

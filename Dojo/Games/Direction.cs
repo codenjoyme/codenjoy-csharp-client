@@ -22,13 +22,13 @@
 
 namespace Dojo.Games
 {
-    public enum Direction
+    public class Direction
     {
-        Left,
-        Right,
-        Up,
-        Down,
-        Act,  // drop potion
-        Stop  // do nothing
+        public static string LEFT = "LEFT";
+        public static string RIGHT = "RIGHT";
+        public static string UP = "UP";
+        public static string DOWN = "DOWN";
+        public static string ACT = "ACT";  // drop potion
+        public static string STOP = "STOP"; // do nothing
     }
 }
