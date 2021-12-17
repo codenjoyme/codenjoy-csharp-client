@@ -15,7 +15,7 @@ namespace Dojo.Games.Verland.Tests
                 "☼   ☼" +
                 "☼☼☼☼";
             var solver = new VerlandSolver();
-            Assert.AreEqual("Right", solver.Get(new VerlandBoard(message)));
+            Assert.AreEqual("UP", solver.Get(new VerlandBoard(message)));
         }
     }
 }

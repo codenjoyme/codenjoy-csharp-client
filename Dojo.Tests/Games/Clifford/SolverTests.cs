@@ -15,7 +15,7 @@ namespace Dojo.Games.Clifford.Tests
                 "☼   ☼" +
                 "☼☼☼☼";
             var solver = new CliffordSolver();
-            Assert.AreEqual("Right", solver.Get(new CliffordBoard(message)));
+            Assert.AreEqual("RIGHT", solver.Get(new CliffordBoard(message)));
         }
     }
 }

@@ -31,10 +31,18 @@ namespace Dojo.Games.Sample
             : base(boardString)
         {
         }
+
+        public bool IsGameOver
+        {
+            get
+            {
+                return BoardString.Contains((char)SampleElement.DEAD_HERO);
+            }
+        }
         
         public Point GetHero()
         {
-            var result = GetRelativeElements(GetHeroesElements());
+            var result = GetRelativeElements(GetHeroElements());
 
             if (result.Count == 0)
             {
@@ -46,125 +54,114 @@ namespace Dojo.Games.Sample
 
         public List<Point> GetOtherHeroes()
         {
-            var result = GetRelativeElements(GetOtherHeroesElements());
-            return result;
-        }
-        
-        public List<Point> GetEnemyHeroes()
-        {
-            var result = GetRelativeElements(GetEnemyHeroElements());
+            var result = GetRelativeElements(GetOtherHeroElements());
             return result;
         }
         
         public List<Point> GetWalls()
         {
-            var result = GetRelativeElements(GetWallsElements());
+            var result = GetRelativeElements(GetWallElements());
             return result;
         }
-        
-        public List<Point> GetOtherStuff()
+
+        public List<Point> GetBombs()
         {
-            var result = GetRelativeElements(GetOtherStuffElements());
+            var result = GetRelativeElements(GetBombElements());
             return result;
         }
-        
-        public int CountContagions(Point point)
-        {
 
-            return IsAnyOfAt(point, GetInfectionMarkers().ToArray()) ? (char) GetAt(point) - '0' : 0; 
+        public List<Point> GetGold()
+        {
+            var result = GetRelativeElements(GetGoldElements());
+            return result;
         }
 
-        
-        public bool IsGameOver
+        public List<Point> GetBarriers()
         {
-            get
-            {
-                return BoardString.Contains((char)HERO_DEAD);
-            }
+            var result = GetRelativeElements(GetBarrierElements());
+            return result;
         }
         
         internal bool IsHeroAt(Point point)
         {
-            return IsAnyOfAt(point, GetHeroesElements().ToArray());
-        }
-        
-        internal bool IsEnemyAt(Point point)
-        {
-            return IsAnyOfAt(point, GetEnemyHeroesElements().ToArray());
+            return IsAnyOfAt(point, GetHeroElements().ToArray());
         }
 
         internal bool IsOtherHeroAt(Point point)
         {
-            return IsAnyOfAt(point, GetOtherHeroesElements().ToArray());
+            return IsAnyOfAt(point, GetOtherHeroElements().ToArray());
         }
-        
-        internal static List<SampleElement> GetEnemyHeroElements()
+
+        internal bool IsWallAt(Point point)
+        {
+            return IsAnyOfAt(point, GetWallElements().ToArray());
+        }
+
+        internal bool IsBombAt(Point point)
+        {
+            return IsAnyOfAt(point, GetBombElements().ToArray());
+        }
+
+        internal bool IsGoldAt(Point point)
+        {
+            return IsAnyOfAt(point, GetGoldElements().ToArray());
+        }
+
+        internal bool IsBarrierAt(Point point)
+        {
+            return IsAnyOfAt(point, GetBarrierElements().ToArray());
+        }
+
+        internal static List<SampleElement> GetHeroElements()
         {
             return new List<SampleElement>
             {
-                ENEMY_HERO_DEAD,
-                ENEMY_HERO
+                SampleElement.DEAD_HERO,
+                SampleElement.HERO
             };
         }
 
-        internal static List<SampleElement> GetWallsElements()
+        internal static List<SampleElement> GetOtherHeroElements()
         {
             return new List<SampleElement>
             {
-                PATHLESS
-            };
-        }
-        
-        internal static List<SampleElement> GetOtherStuffElements()
-        {
-            return new List<SampleElement>
-            {
-                INFECTION,
-                HIDDEN,
-                PATHLESS
+                SampleElement.OTHER_HERO,
+                SampleElement.OTHER_DEAD_HERO
             };
         }
 
-        internal static List<SampleElement> GetHeroesElements()
+        internal static List<SampleElement> GetWallElements()
         {
             return new List<SampleElement>
             {
-                HERO_DEAD,
-                HERO
+                SampleElement.WALL
             };
         }
 
-        internal static List<SampleElement> GetEnemyHeroesElements()
+        internal static List<SampleElement> GetGoldElements()
         {
             return new List<SampleElement>
             {
-                ENEMY_HERO_DEAD,
-                ENEMY_HERO
+                SampleElement.GOLD
             };
         }
 
-        internal static List<SampleElement> GetOtherHeroesElements()
+        internal static List<SampleElement> GetBombElements()
         {
             return new List<SampleElement>
             {
-                OTHER_HERO_DEAD,
-                OTHER_HERO
+                SampleElement.BOMB
             };
         }
-        
-        internal static List<SampleElement> GetInfectionMarkers()
+
+        internal static List<SampleElement> GetBarrierElements()
         {
             return new List<SampleElement>
             {
-                CLEAR,
-                CONTAGION_ONE,
-                CONTAGION_TWO,
-                CONTAGION_THREE,
-                CONTAGION_FOUR,
-                CONTAGION_FIVE,
-                CONTAGION_SIX,
-                CONTAGION_SEVEN,
-                CONTAGION_EIGHT
+                SampleElement.WALL,
+                SampleElement.BOMB,
+                SampleElement.OTHER_HERO,
+                SampleElement.OTHER_DEAD_HERO
             };
         }
         
@@ -173,13 +170,13 @@ namespace Dojo.Games.Sample
             return string.Format("{0}\n" +
                      "Hero at: {1}\n" +
                      "Other heroes at: {2}\n" +
-                     "Enemy heroes at: {3}\n" +
-                     "Other stuff at: {4}\n",
+                     "Bombs at: {3}\n" +
+                     "Gold at: {4}\n",
                      BoardAsString(),
                      GetHero(),
                      GetOtherHeroes().ListAsString(),
-                     GetEnemyHeroes().ListAsString(),
-                     GetOtherStuff().ListAsString()
+                     GetBombs().ListAsString(),
+                     GetGold().ListAsString()
             );
         }
     }

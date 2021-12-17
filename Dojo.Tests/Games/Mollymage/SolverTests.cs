@@ -21,7 +21,7 @@ namespace Dojo.Games.Mollymage.Tests
                 "☼   ☼" +
                 "☼☼☼☼";
             var solver = new MollymageSolver();
-            Assert.AreEqual("Act", solver.Get(new MollymageBoard(message)));
+            Assert.AreEqual("ACT", solver.Get(new MollymageBoard(message)));
         }
     }
 }
