@@ -26,21 +26,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dojo.Games.Verland
+namespace Dojo.Games.Sample
 {
-    public class VerlandSolver : ISolver
+    public class SampleSolver : ISolver
     {
         public string Get(IBoard gameBoard)
         {
-            return Get(gameBoard as VerlandBoard);
+            return Get(gameBoard as SampleBoard);
         }
 
-        private string Get(VerlandBoard gameBoard)
+        private string Get(SampleBoard gameBoard)
         {
 
             // TODO your code here
 
-            return VerlandCommand.MOVE_UP;
+            return SampleCommand.DROP_BOMB;
         }
     }
 }

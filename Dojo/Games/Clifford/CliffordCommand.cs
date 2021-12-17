@@ -20,27 +20,27 @@
  * #L%
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dojo.Games.Verland
+namespace Dojo.Games.Clifford
 {
-    public class VerlandSolver : ISolver
+    public class CliffordCommand
     {
-        public string Get(IBoard gameBoard)
-        {
-            return Get(gameBoard as VerlandBoard);
-        }
+        public static string MOVE_LEFT = "LEFT";
+        public static string MOVE_RIGHT = "RIGHT";
+        public static string MOVE_UP = "UP";
+        public static string MOVE_DOWN = "DOWN";
 
-        private string Get(VerlandBoard gameBoard)
-        {
+        public static string CRACK_LEFT = "ACT,LEFT";
+        public static string CRACK_RIGHT = "ACT,RIGHT";
 
-            // TODO your code here
+        public static string DIE = "ACT(0)";
 
-            return VerlandCommand.MOVE_UP;
-        }
+        public static string SHOOT_LEFT = "ACT(1),LEFT";
+        public static string SHOOT_RIGHT = "ACT(1),RIGHT";
+
+        public static string OPEN_DOOR_LEFT = "ACT(2),LEFT";
+        public static string OPEN_DOOR_RIGHT = "ACT(2),RIGHT";
+
+        public static string CLOSE_DOOR_LEFT = "ACT(3),LEFT";
+        public static string CLOSE_DOOR_RIGHT = "ACT(3),RIGHT";
     }
 }

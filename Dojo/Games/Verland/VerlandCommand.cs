@@ -20,27 +20,18 @@
  * #L%
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Dojo.Games.Verland
 {
-    public class VerlandSolver : ISolver
+    public class VerlandCommand
     {
-        public string Get(IBoard gameBoard)
-        {
-            return Get(gameBoard as VerlandBoard);
-        }
+        public static string MOVE_LEFT = "LEFT";
+        public static string MOVE_RIGHT = "RIGHT";
+        public static string MOVE_UP = "UP";
+        public static string MOVE_DOWN = "DOWN";
 
-        private string Get(VerlandBoard gameBoard)
-        {
-
-            // TODO your code here
-
-            return VerlandCommand.MOVE_UP;
-        }
+        public static string CURE_LEFT = "ACT,LEFT";
+        public static string CURE_RIGHT = "ACT,RIGHT";
+        public static string CURE_UP = "ACT,UP";
+        public static string CURE_DOWN = "ACT,DOWN";
     }
 }

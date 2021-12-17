@@ -34,8 +34,10 @@ namespace Dojo.Games.Mollymage
 
         private string Get(MollymageBoard gameBoard)
         {
-            // Type here your code
-            return MollymageDirection.ACT;
+
+            // TODO your code here
+
+            return MollymageCommand.DROP_POTION;
         }
     }
 }

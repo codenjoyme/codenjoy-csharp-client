@@ -20,27 +20,15 @@
  * #L%
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dojo.Games.Verland
+namespace Dojo.Games.Sample
 {
-    public class VerlandSolver : ISolver
+    public class SampleCommand
     {
-        public string Get(IBoard gameBoard)
-        {
-            return Get(gameBoard as VerlandBoard);
-        }
+        public static string MOVE_LEFT = "LEFT";
+        public static string MOVE_RIGHT = "RIGHT";
+        public static string MOVE_UP = "UP";
+        public static string MOVE_DOWN = "DOWN";
 
-        private string Get(VerlandBoard gameBoard)
-        {
-
-            // TODO your code here
-
-            return VerlandCommand.MOVE_UP;
-        }
+        public static string DROP_BOMB = "ACT";
     }
 }
