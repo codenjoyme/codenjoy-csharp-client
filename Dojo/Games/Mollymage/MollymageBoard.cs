@@ -146,7 +146,7 @@ namespace Dojo.Games.Mollymage
 
         public List<Point> GetBlasts()
         {
-            return Get(MollymageElement.BOOM);
+            return Get(MollymageElement.BLAST);
         }
 
         public List<Point> GetFutureBlasts()

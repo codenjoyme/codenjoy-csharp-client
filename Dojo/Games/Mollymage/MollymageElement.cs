@@ -54,7 +54,7 @@ namespace Dojo.Games.Mollymage
             // Boom! this is what is potion does, everything that is
             // destroyable got destroyed.
 
-        BOOM = (short)'҉',
+        BLAST = (short)'҉',
 
             // Indestructible wall - it will not fall from potion.
 
