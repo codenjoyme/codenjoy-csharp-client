@@ -105,35 +105,35 @@ namespace Dojo.Games.Verland
 
             // Вокруг этой зоны было зафиксировано одно заражение.
 
-        ONE_CONTAGION = (short)'1',
+        CONTAGION_ONE = (short)'1',
 
             // Вокруг этой зоны было зафиксировано два заражения.
 
-        TWO_CONTAGIONS = (short)'2',
+        CONTAGION_TWO = (short)'2',
 
             // Вокруг этой зоны было зафиксировано три заражения.
 
-        THREE_CONTAGIONS = (short)'3',
+        CONTAGION_THREE = (short)'3',
 
             // Вокруг этой зоны было зафиксировано четыре заражения.
 
-        FOUR_CONTAGIONS = (short)'4',
+        CONTAGION_FOUR = (short)'4',
 
             // Вокруг этой зоны было зафиксировано пять заражений.
 
-        FIVE_CONTAGIONS = (short)'5',
+        CONTAGION_FIVE = (short)'5',
 
             // Вокруг этой зоны было зафиксировано шесть заражений.
 
-        SIX_CONTAGIONS = (short)'6',
+        CONTAGION_SIX = (short)'6',
 
             // Вокруг этой зоны было зафиксировано семь заражений.
 
-        SEVEN_CONTAGIONS = (short)'7',
+        CONTAGION_SEVEN = (short)'7',
 
             // Вокруг этой зоны было зафиксировано восемь заражений.
 
-        EIGHT_CONTAGIONS = (short)'8'
+        CONTAGION_EIGHT = (short)'8'
     }
 }
 
