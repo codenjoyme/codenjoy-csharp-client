@@ -50,17 +50,17 @@ call %RUN% :init_colors
     goto :eof
 
 :build
-    call %RUN% :eval_echo ‘%DOTNET% build %ROOT%‘
+    call %RUN% :eval_echo ‘%DOTNET% build .‘
     goto :eof
 
 :test
-    call %RUN% :eval_echo ‘%DOTNET% test --verbosity minimal --list-tests %ROOT%‘
-    call %RUN% :eval_echo ‘%DOTNET% test --no-build --verbosity normal %ROOT%‘
+    call %RUN% :eval_echo ‘%DOTNET% test --verbosity minimal --list-tests .‘
+    call %RUN% :eval_echo ‘%DOTNET% test --no-build --verbosity normal .‘
 
     rem to run tests for one game only
     rem call %RUN% :eval_echo ‘%DOTNET% test --filter “TestCategory=%GAME_TO_RUN%“‘
     goto :eof
 
 :run
-    call %RUN% :eval_echo ‘%DOTNET% %ROOT%\Dojo\bin\Debug\net6.0\Dojo.dll %GAME_TO_RUN% %SERVER_URL%‘
+    call %RUN% :eval_echo ‘%DOTNET% .\Dojo\bin\Debug\net6.0\Dojo.dll %GAME_TO_RUN% %SERVER_URL%‘
     goto :eof
