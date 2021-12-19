@@ -1,6 +1,9 @@
 @echo off
 
-call run :init_colors
+if "%RUN%"=="" set RUN=%CD%\run
+if "%STUFF%"=="" set STUFF=%CD%\stuff
+
+call %RUN% :init_colors
 
 :check_run_mode
     if "%*"=="" (       
@@ -12,8 +15,8 @@ call run :init_colors
 
 :run_executable
     rem run stuff.bat as executable script
-    call run :color ‘%CL_INFO%‘ ‘This is not executable script. Please use 'run.bat' only.‘
-    call run :ask   
+    call %RUN% :color ‘%CL_INFO%‘ ‘This is not executable script. Please use 'run.bat' only.‘
+    call %RUN% :ask   
     goto :eof
 
 :run_library
@@ -31,33 +34,33 @@ call run :init_colors
     set DOTNET=%DOTNET_HOME%\dotnet.exe
 
     echo Language environment variables
-    call run :color ‘%CL_INFO%‘ ‘PATH=%PATH%‘
-    call run :color ‘%CL_INFO%‘ ‘DOTNET_HOME=%DOTNET_HOME%‘
+    call %RUN% :color ‘%CL_INFO%‘ ‘PATH=%PATH%‘
+    call %RUN% :color ‘%CL_INFO%‘ ‘DOTNET_HOME=%DOTNET_HOME%‘
 
     set ARCH_URL=https://download.visualstudio.microsoft.com/download/pr/ca65b248-9750-4c2d-89e6-ef27073d5e95/05c682ca5498bfabc95985a4c72ac635/dotnet-sdk-6.0.100-win-x64.zip
     set ARCH_FOLDER=
     goto :eof
 
 :install
-    call run :install dotnet %ARCH_URL% %ARCH_FOLDER%
+    call %RUN% :install dotnet %ARCH_URL% %ARCH_FOLDER%
     goto :eof
 
 :version
-    call run :eval_echo_color ‘%DOTNET% --version‘
+    call %RUN% :eval_echo_color ‘%DOTNET% --version‘
     goto :eof
 
 :build
-    call run :eval_echo ‘%DOTNET% build‘
+    call %RUN% :eval_echo ‘%DOTNET% build‘
     goto :eof
 
 :test
-    call run :eval_echo ‘%DOTNET% test --verbosity minimal --list-tests‘
-    call run :eval_echo ‘%DOTNET% test --no-build --verbosity normal‘
+    call %RUN% :eval_echo ‘%DOTNET% test --verbosity minimal --list-tests‘
+    call %RUN% :eval_echo ‘%DOTNET% test --no-build --verbosity normal‘
 
     rem to run tests for one game only
-    rem call run :eval_echo ‘%DOTNET% test --filter “TestCategory=%GAME_TO_RUN%“‘
+    rem call %RUN% :eval_echo ‘%DOTNET% test --filter “TestCategory=%GAME_TO_RUN%“‘
     goto :eof
 
 :run
-    call run :eval_echo ‘%DOTNET% Dojo\bin\Debug\net6.0\Dojo.dll %GAME_TO_RUN% %SERVER_URL%‘
+    call %RUN% :eval_echo ‘%DOTNET% Dojo\bin\Debug\net6.0\Dojo.dll %GAME_TO_RUN% %SERVER_URL%‘
     goto :eof
