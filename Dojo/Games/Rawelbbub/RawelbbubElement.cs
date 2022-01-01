@@ -26,9 +26,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dojo.Games.Battlecity
+namespace Dojo.Games.Rawelbbub
 {
-    public enum BattlecityElement : short
+    public enum RawelbbubElement : short
     {
 
             // An empty space where a tank can move.

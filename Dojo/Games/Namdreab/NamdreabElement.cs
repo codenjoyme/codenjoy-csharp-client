@@ -26,12 +26,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dojo.Games.Snakebattle
+namespace Dojo.Games.Namdreab
 {
-    public enum SnakebattleElement : short
+    public enum NamdreabElement : short
     {
 
-            // Empty space - space where the snake can move.
+            // Empty space - space where the hero can move.
 
         NONE = (short)' ',
 
@@ -39,7 +39,7 @@ namespace Dojo.Games.Snakebattle
 
         WALL = (short)'☼',
 
-            // Respawn point from which the snake starts its movement.
+            // Respawn point from which the hero starts its movement.
 
         START_FLOOR = (short)'#',
 
@@ -67,155 +67,155 @@ namespace Dojo.Games.Snakebattle
 
         GOLD = (short)'$',
 
-            // Your snake head pointing down.
+            // Your hero head pointing down.
 
         HEAD_DOWN = (short)'▼',
 
-            // Your snake head pointing left.
+            // Your hero head pointing left.
 
         HEAD_LEFT = (short)'◄',
 
-            // Your snake head pointing right.
+            // Your hero head pointing right.
 
         HEAD_RIGHT = (short)'►',
 
-            // Your snake head pointing up.
+            // Your hero head pointing up.
 
         HEAD_UP = (short)'▲',
 
-            // Your snake is dead.
+            // Your hero is dead.
 
         HEAD_DEAD = (short)'☻',
 
-            // Your snake head under influence Fury pill/Devils mask.
+            // Your hero head under influence Fury pill/Devils mask.
 
         HEAD_EVIL = (short)'♥',
 
-            // Your snake head under influence Flying pill/Angels wings.
+            // Your hero head under influence Flying pill/Angels wings.
 
         HEAD_FLY = (short)'♠',
 
-            // Your snake head when snake is inactive.
+            // Your hero head when hero is inactive.
 
         HEAD_SLEEP = (short)'&',
 
-            // Body of your snake is directed horizontally.
+            // Body of your hero is directed horizontally.
 
         BODY_HORIZONTAL = (short)'═',
 
-            // Body of your snake is directed vertically.
+            // Body of your hero is directed vertically.
 
         BODY_VERTICAL = (short)'║',
 
-            // Turning your snake body from left to down.
+            // Turning your hero body from left to down.
 
         BODY_LEFT_DOWN = (short)'╗',
 
-            // Turning your snake body from left to up.
+            // Turning your hero body from left to up.
 
         BODY_LEFT_UP = (short)'╝',
 
-            // Turning your snake body from right to down.
+            // Turning your hero body from right to down.
 
         BODY_RIGHT_DOWN = (short)'╔',
 
-            // Turning your snake body from left to up.
+            // Turning your hero body from left to up.
 
         BODY_RIGHT_UP = (short)'╚',
 
-            // Your snake tail (end) pointing down.
+            // Your hero tail (end) pointing down.
 
         TAIL_END_DOWN = (short)'╙',
 
-            // Your snake tail (end) pointing left.
+            // Your hero tail (end) pointing left.
 
         TAIL_END_LEFT = (short)'╘',
 
-            // Your snake tail (end) pointing up.
+            // Your hero tail (end) pointing up.
 
         TAIL_END_UP = (short)'╓',
 
-            // Your snake tail (end) pointing right.
+            // Your hero tail (end) pointing right.
 
         TAIL_END_RIGHT = (short)'╕',
 
-            // Your snake tail (end) when snake is inactive.
+            // Your hero tail (end) when hero is inactive.
 
         TAIL_INACTIVE = (short)'~',
 
-            // Enemy snake head pointing down.
+            // Enemy hero head pointing down.
 
         ENEMY_HEAD_DOWN = (short)'˅',
 
-            // Enemy snake head pointing left.
+            // Enemy hero head pointing left.
 
         ENEMY_HEAD_LEFT = (short)'<',
 
-            // Enemy snake head pointing right.
+            // Enemy hero head pointing right.
 
         ENEMY_HEAD_RIGHT = (short)'>',
 
-            // Enemy snake head pointing up.
+            // Enemy hero head pointing up.
 
         ENEMY_HEAD_UP = (short)'˄',
 
-            // Enemy snake is dead.
+            // Enemy hero is dead.
 
         ENEMY_HEAD_DEAD = (short)'☺',
 
-            // Enemy snake head under influence Fury pill/Devils mask.
+            // Enemy hero head under influence Fury pill/Devils mask.
 
         ENEMY_HEAD_EVIL = (short)'♣',
 
-            // Enemy snake head under influence Flying pill/Angels wings.
+            // Enemy hero head under influence Flying pill/Angels wings.
 
         ENEMY_HEAD_FLY = (short)'♦',
 
-            // Enemy snake head when snake is inactive.
+            // Enemy hero head when hero is inactive.
 
         ENEMY_HEAD_SLEEP = (short)'ø',
 
-            // Body of enemy snake is directed horizontally.
+            // Body of enemy hero is directed horizontally.
 
         ENEMY_BODY_HORIZONTAL = (short)'─',
 
-            // Body of enemy snake is directed vertically.
+            // Body of enemy hero is directed vertically.
 
         ENEMY_BODY_VERTICAL = (short)'│',
 
-            // Turning enemy snake body from left to down.
+            // Turning enemy hero body from left to down.
 
         ENEMY_BODY_LEFT_DOWN = (short)'┐',
 
-            // Turning enemy snake body from left to up.
+            // Turning enemy hero body from left to up.
 
         ENEMY_BODY_LEFT_UP = (short)'┘',
 
-            // Turning enemy snake body from right to down.
+            // Turning enemy hero body from right to down.
 
         ENEMY_BODY_RIGHT_DOWN = (short)'┌',
 
-            // Turning enemy snake body from left to up.
+            // Turning enemy hero body from left to up.
 
         ENEMY_BODY_RIGHT_UP = (short)'└',
 
-            // Enemy snake tail (end) pointing down.
+            // Enemy hero tail (end) pointing down.
 
         ENEMY_TAIL_END_DOWN = (short)'¤',
 
-            // Enemy snake tail (end) pointing left.
+            // Enemy hero tail (end) pointing left.
 
         ENEMY_TAIL_END_LEFT = (short)'×',
 
-            // Enemy snake tail (end) pointing up.
+            // Enemy hero tail (end) pointing up.
 
         ENEMY_TAIL_END_UP = (short)'æ',
 
-            // Enemy snake tail (end) pointing right.
+            // Enemy hero tail (end) pointing right.
 
         ENEMY_TAIL_END_RIGHT = (short)'ö',
 
-            // Enemy snake tail (end) when snake is inactive.
+            // Enemy hero tail (end) when hero is inactive.
 
         ENEMY_TAIL_INACTIVE = (short)'*'
     }

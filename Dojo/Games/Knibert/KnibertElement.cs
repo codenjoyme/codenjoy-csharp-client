@@ -26,9 +26,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dojo.Games.Snake
+namespace Dojo.Games.Knibert
 {
-    public enum SnakeElement : short
+    public enum KnibertElement : short
     {
 
             // Stone.
@@ -45,23 +45,23 @@ namespace Dojo.Games.Snake
 
         BREAK = (short)'☼',
 
-            // An empty place in the field where the snake can go.
+            // An empty place in the field where the hero can go.
 
         NONE = (short)' ',
 
-            // Snake head is pointing down.
+            // Hero head is pointing down.
 
         HEAD_DOWN = (short)'▼',
 
-            // Snake head is pointing left.
+            // Hero head is pointing left.
 
         HEAD_LEFT = (short)'◄',
 
-            // Snake head is pointing right.
+            // Hero head is pointing right.
 
         HEAD_RIGHT = (short)'►',
 
-            // Snake head is pointing up.
+            // Hero head is pointing up.
 
         HEAD_UP = (short)'▲',
 
@@ -73,19 +73,19 @@ namespace Dojo.Games.Snake
 
         TAIL_VERTICAL = (short)'║',
 
-            // Turning the snake body from left to down.
+            // Turning the hero body from left to down.
 
         TAIL_LEFT_DOWN = (short)'╗',
 
-            // Turning the snake body from left to up.
+            // Turning the hero body from left to up.
 
         TAIL_LEFT_UP = (short)'╝',
 
-            // Turning the snake body from right to down.
+            // Turning the hero body from right to down.
 
         TAIL_RIGHT_DOWN = (short)'╔',
 
-            // Turning the snake body from right to up.
+            // Turning the hero body from right to up.
 
         TAIL_RIGHT_UP = (short)'╚',
 
