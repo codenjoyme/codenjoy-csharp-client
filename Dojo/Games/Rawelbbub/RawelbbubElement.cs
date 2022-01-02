@@ -33,11 +33,11 @@ namespace Dojo.Games.Rawelbbub
 
             // An empty space where hero can move.
 
-        NONE = (short)' ',
+        WATER = (short)' ',
 
-            // The undestroyable wall.
+            // Underwater reefs. They cannot be destroyed.
 
-        BATTLE_WALL = (short)'☼',
+        REEFS = (short)'☼',
 
             // A destroyed hero. A new appears just in a second.
 
@@ -221,7 +221,7 @@ namespace Dojo.Games.Rawelbbub
         PRIZE_WALKING_ON_WATER = (short)'3',
 
             // A prize that allows the hero to temporarily see all enemies
-            // under the trees.
+            // under the trees and their bullets.
 
         PRIZE_VISIBILITY = (short)'4',
 
