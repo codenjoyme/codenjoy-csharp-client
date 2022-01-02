@@ -31,7 +31,7 @@ namespace Dojo.Games.Rawelbbub
     public enum RawelbbubElement : short
     {
 
-            // An empty space where a tank can move.
+            // An empty space where hero can move.
 
         NONE = (short)' ',
 
@@ -39,25 +39,25 @@ namespace Dojo.Games.Rawelbbub
 
         BATTLE_WALL = (short)'☼',
 
-            // A destroyed enemy’s tank. A new appears just in a second.
+            // A destroyed hero. A new appears just in a second.
 
         BANG = (short)'Ѡ',
 
-            // Ice, having driven onto which the tank will begin to drift.
-            // During a skid, the tank will repeat the old commands for
-            // several ticks in a row, ignoring the current commands.
+            // Ice, having driven onto which hero will begin to drift.
+            // During a skid, hero will repeat the old commands for several
+            // ticks in a row, ignoring the current commands.
 
         ICE = (short)'#',
 
-            // The trees hide tanks which can continue to shoot at the same
-            // time. The fired shells are also not visible under the trees.
-            // Only prizes can be seen from behind the trees.
+            // The trees hide heroes which can continue to shoot at the
+            // same time. The fired shells are also not visible under the
+            // trees. Only prizes can be seen from behind the trees.
 
         TREE = (short)'%',
 
             // The river does not allow to pass through itself without the
             // PRIZE_WALKING_ON_WATER prize, but the shells fly freely
-            // through the water. A tank stuck in the middle of the water,
+            // through the water. Hero stuck in the middle of the water,
             // after canceling the PRIZE_WALKING_ON_WATER prize, can move 1
             // cell in the water only every N ticks.
 
@@ -147,60 +147,60 @@ namespace Dojo.Games.Rawelbbub
 
         BULLET = (short)'•',
 
-            // Your tank is pointing up.
+            // Your hero is pointing up.
 
-        TANK_UP = (short)'▲',
+        HERO_UP = (short)'▲',
 
-            // Your tank is pointing right.
+            // Your hero is pointing right.
 
-        TANK_RIGHT = (short)'►',
+        HERO_RIGHT = (short)'►',
 
-            // Your tank is pointing down.
+            // Your hero is pointing down.
 
-        TANK_DOWN = (short)'▼',
+        HERO_DOWN = (short)'▼',
 
-            // Your tank is pointing left.
+            // Your hero is pointing left.
 
-        TANK_LEFT = (short)'◄',
+        HERO_LEFT = (short)'◄',
 
-            // Enemy tank is pointing up.
+            // Enemy hero is pointing up.
 
-        OTHER_TANK_UP = (short)'˄',
+        OTHER_HERO_UP = (short)'˄',
 
-            // Enemy tank is pointing right.
+            // Enemy hero is pointing right.
 
-        OTHER_TANK_RIGHT = (short)'˃',
+        OTHER_HERO_RIGHT = (short)'˃',
 
-            // Enemy tank is pointing down.
+            // Enemy hero is pointing down.
 
-        OTHER_TANK_DOWN = (short)'˅',
+        OTHER_HERO_DOWN = (short)'˅',
 
-            // Enemy tank is pointing left.
+            // Enemy hero is pointing left.
 
-        OTHER_TANK_LEFT = (short)'˂',
+        OTHER_HERO_LEFT = (short)'˂',
 
-            // AI-tank is pointing up.
+            // AI is pointing up.
 
-        AI_TANK_UP = (short)'?',
+        AI_UP = (short)'?',
 
-            // AI-tank is pointing right.
+            // AI is pointing right.
 
-        AI_TANK_RIGHT = (short)'»',
+        AI_RIGHT = (short)'»',
 
-            // AI-tank is pointing down.
+            // AI is pointing down.
 
-        AI_TANK_DOWN = (short)'¿',
+        AI_DOWN = (short)'¿',
 
-            // AI-tank is pointing left.
+            // AI is pointing left.
 
-        AI_TANK_LEFT = (short)'«',
+        AI_LEFT = (short)'«',
 
-            // AI-tank can also be a prize, then it is highlighted by this
+            // AI can also be a prize, then it is highlighted by this
             // sprite every few ticks.
 
-        AI_TANK_PRIZE = (short)'◘',
+        AI_PRIZE = (short)'◘',
 
-            // The dropped prize after the destruction of the prize tank
+            // The dropped prize after the destruction of the prize AI
             // flickers on the field every even tick of the game with this
             // sprite.
 
