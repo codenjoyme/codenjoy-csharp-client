@@ -39,9 +39,9 @@ namespace Dojo.Games.Rawelbbub
 
         REEFS = (short)'☼',
 
-            // A destroyed hero. A new appears just in a second.
+            // Explosion site. It disappears in a second.
 
-        BANG = (short)'Ѡ',
+        EXPLOSION = (short)'Ѡ',
 
             // Ice, having driven onto which hero will begin to drift.
             // During a skid, hero will repeat the old commands for several
