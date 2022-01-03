@@ -145,9 +145,12 @@ namespace Dojo.Games.Rawelbbub
 
         ICEBERG_DESTROYED = (short)' ',
 
-            // Completely destroyed wall. Wall will recover over time.
+            // Torpedo - is a self-propelled underwater missile designed to
+            // be fired from a submarine and to explode on reaching a
+            // target. The target can be an iceberg, another submarine and
+            // other elements under water.
 
-        BULLET = (short)'•',
+        TORPEDO = (short)'•',
 
             // Your hero is pointing up.
 
