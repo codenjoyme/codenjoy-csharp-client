@@ -35,7 +35,8 @@ namespace Dojo.Games.Rawelbbub
 
         WATER = (short)' ',
 
-            // Underwater reefs. They cannot be destroyed.
+            // Underwater reefs. They cannot be destroyed without prize
+            // PRIZE_BREAKING_BAD.
 
         REEFS = (short)'☼',
 
@@ -64,85 +65,85 @@ namespace Dojo.Games.Rawelbbub
 
         FISHNET = (short)'~',
 
-            // A wall that hasn't been shot yet. It takes 3 shots to
+            // An iceberg that hasn't been shot yet. It takes 3 shots to
             // completely destroy.
 
-        WALL = (short)'╬',
+        ICEBERG_HUGE = (short)'╬',
 
-            // Partially destroyed wall. For complete destruction, 2 shot
+            // Partially destroyed iceberg. For complete destruction, 2
+            // shot is required.
+
+        ICEBERG_MEDIUM_DOWN = (short)'╩',
+
+            // Partially destroyed iceberg. For complete destruction, 2
+            // shot is required.
+
+        ICEBERG_MEDIUM_UP = (short)'╦',
+
+            // Partially destroyed iceberg. For complete destruction, 2
+            // shot is required.
+
+        ICEBERG_MEDIUM_LEFT = (short)'╠',
+
+            // Partially destroyed iceberg. For complete destruction, 2
+            // shot is required.
+
+        ICEBERG_MEDIUM_RIGHT = (short)'╣',
+
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_DOWN = (short)'╩',
+        ICEBERG_SMALL_DOWN_DOWN = (short)'╨',
 
-            // Partially destroyed wall. For complete destruction, 2 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_UP = (short)'╦',
+        ICEBERG_SMALL_UP_UP = (short)'╥',
 
-            // Partially destroyed wall. For complete destruction, 2 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_LEFT = (short)'╠',
+        ICEBERG_SMALL_LEFT_LEFT = (short)'╞',
 
-            // Partially destroyed wall. For complete destruction, 2 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_RIGHT = (short)'╣',
+        ICEBERG_SMALL_RIGHT_RIGHT = (short)'╡',
 
-            // Partially destroyed wall. For complete destruction, 1 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_DOWN_TWICE = (short)'╨',
+        ICEBERG_SMALL_LEFT_RIGHT = (short)'│',
 
-            // Partially destroyed wall. For complete destruction, 1 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_UP_TWICE = (short)'╥',
+        ICEBERG_SMALL_UP_DOWN = (short)'─',
 
-            // Partially destroyed wall. For complete destruction, 1 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_LEFT_TWICE = (short)'╞',
+        ICEBERG_SMALL_UP_LEFT = (short)'┌',
 
-            // Partially destroyed wall. For complete destruction, 1 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_RIGHT_TWICE = (short)'╡',
+        ICEBERG_SMALL_UP_RIGHT = (short)'┐',
 
-            // Partially destroyed wall. For complete destruction, 1 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_LEFT_RIGHT = (short)'│',
+        ICEBERG_SMALL_DOWN_LEFT = (short)'└',
 
-            // Partially destroyed wall. For complete destruction, 1 shot
+            // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
 
-        WALL_DESTROYED_UP_DOWN = (short)'─',
+        ICEBERG_SMALL_DOWN_RIGHT = (short)'┘',
 
-            // Partially destroyed wall. For complete destruction, 1 shot
-            // is required.
+            // Completely destroyed iceberg. No different from WATER. A new
+            // one will appear at this place soon.
 
-        WALL_DESTROYED_UP_LEFT = (short)'┌',
-
-            // Partially destroyed wall. For complete destruction, 1 shot
-            // is required.
-
-        WALL_DESTROYED_RIGHT_UP = (short)'┐',
-
-            // Partially destroyed wall. For complete destruction, 1 shot
-            // is required.
-
-        WALL_DESTROYED_DOWN_LEFT = (short)'└',
-
-            // Partially destroyed wall. For complete destruction, 1 shot
-            // is required.
-
-        WALL_DESTROYED_DOWN_RIGHT = (short)'┘',
-
-            // Partially destroyed wall. For complete destruction, 2 shot
-            // is required.
-
-        WALL_DESTROYED = (short)' ',
+        ICEBERG_DESTROYED = (short)' ',
 
             // Completely destroyed wall. Wall will recover over time.
 
@@ -211,11 +212,11 @@ namespace Dojo.Games.Rawelbbub
 
         PRIZE_IMMORTALITY = (short)'1',
 
-            // A prize that allows you to temporarily destroy any walls
-            // with 1 shot, even indestructible ones (but not the border of
-            // the field).
+            // A prize that allows you to temporarily destroy any icebergs
+            // and underwater reefs (but not the border of the field) with
+            // 1 shot.
 
-        PRIZE_BREAKING_WALLS = (short)'2',
+        PRIZE_BREAKING_BAD = (short)'2',
 
             // A prize that allows the hero to temporarily walk on fishnet.
 
