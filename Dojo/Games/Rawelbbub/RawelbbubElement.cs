@@ -208,10 +208,21 @@ namespace Dojo.Games.Rawelbbub
 
         AI_DOWN = (short)'¿',
 
-            // AI can also be a prize, then it is highlighted by this
-            // sprite every few ticks.
+            // AI with prize is pointing left.
 
-        AI_PRIZE = (short)'◘',
+        AI_PRIZE_LEFT = (short)'{',
+
+            // AI with prize is pointing right.
+
+        AI_PRIZE_RIGHT = (short)'}',
+
+            // AI with prize is pointing up.
+
+        AI_PRIZE_UP = (short)'î',
+
+            // AI with prize is pointing down.
+
+        AI_PRIZE_DOWN = (short)'w',
 
             // The dropped prize after the destruction of the prize AI
             // flickers on the field every even tick of the game with this
