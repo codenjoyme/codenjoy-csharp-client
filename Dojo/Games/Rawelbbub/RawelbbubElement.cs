@@ -31,7 +31,8 @@ namespace Dojo.Games.Rawelbbub
     public enum RawelbbubElement : short
     {
 
-            // An empty space where hero can move.
+            // An empty space where hero can move. If there was an iceberg
+            // in this place before, it can grow again
 
         WATER = (short)' ',
 
@@ -73,7 +74,12 @@ namespace Dojo.Games.Rawelbbub
             // Partially destroyed iceberg. For complete destruction, 2
             // shot is required.
 
-        ICEBERG_MEDIUM_DOWN = (short)'╩',
+        ICEBERG_MEDIUM_LEFT = (short)'╠',
+
+            // Partially destroyed iceberg. For complete destruction, 2
+            // shot is required.
+
+        ICEBERG_MEDIUM_RIGHT = (short)'╣',
 
             // Partially destroyed iceberg. For complete destruction, 2
             // shot is required.
@@ -83,22 +89,7 @@ namespace Dojo.Games.Rawelbbub
             // Partially destroyed iceberg. For complete destruction, 2
             // shot is required.
 
-        ICEBERG_MEDIUM_LEFT = (short)'╠',
-
-            // Partially destroyed iceberg. For complete destruction, 2
-            // shot is required.
-
-        ICEBERG_MEDIUM_RIGHT = (short)'╣',
-
-            // Almost destroyed iceberg. For complete destruction, 1 shot
-            // is required.
-
-        ICEBERG_SMALL_DOWN_DOWN = (short)'╨',
-
-            // Almost destroyed iceberg. For complete destruction, 1 shot
-            // is required.
-
-        ICEBERG_SMALL_UP_UP = (short)'╥',
+        ICEBERG_MEDIUM_DOWN = (short)'╩',
 
             // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
@@ -109,6 +100,16 @@ namespace Dojo.Games.Rawelbbub
             // is required.
 
         ICEBERG_SMALL_RIGHT_RIGHT = (short)'╡',
+
+            // Almost destroyed iceberg. For complete destruction, 1 shot
+            // is required.
+
+        ICEBERG_SMALL_UP_UP = (short)'╥',
+
+            // Almost destroyed iceberg. For complete destruction, 1 shot
+            // is required.
+
+        ICEBERG_SMALL_DOWN_DOWN = (short)'╨',
 
             // Almost destroyed iceberg. For complete destruction, 1 shot
             // is required.
@@ -140,65 +141,72 @@ namespace Dojo.Games.Rawelbbub
 
         ICEBERG_SMALL_DOWN_RIGHT = (short)'┘',
 
-            // Completely destroyed iceberg. No different from WATER. A new
-            // one will appear at this place soon.
-
-        ICEBERG_DESTROYED = (short)' ',
-
             // Torpedo - is a self-propelled underwater missile designed to
             // be fired from a submarine and to explode on reaching a
             // target. The target can be an iceberg, another submarine and
-            // other elements under water.
+            // other elements under water. This torpedo moves to the left.
 
-        TORPEDO = (short)'•',
+        TORPEDO_LEFT = (short)'•',
 
-            // Your hero is pointing up.
+            // This torpedo moves to the right.
 
-        HERO_UP = (short)'▲',
+        TORPEDO_RIGHT = (short)'¤',
 
-            // Your hero is pointing right.
+            // This torpedo moves to the up.
 
-        HERO_RIGHT = (short)'►',
+        TORPEDO_UP = (short)'ø',
 
-            // Your hero is pointing down.
+            // This torpedo moves to the down.
 
-        HERO_DOWN = (short)'▼',
+        TORPEDO_DOWN = (short)'×',
 
             // Your hero is pointing left.
 
         HERO_LEFT = (short)'◄',
 
-            // Enemy hero is pointing up.
+            // Your hero is pointing right.
 
-        OTHER_HERO_UP = (short)'˄',
+        HERO_RIGHT = (short)'►',
 
-            // Enemy hero is pointing right.
+            // Your hero is pointing up.
 
-        OTHER_HERO_RIGHT = (short)'˃',
+        HERO_UP = (short)'▲',
 
-            // Enemy hero is pointing down.
+            // Your hero is pointing down.
 
-        OTHER_HERO_DOWN = (short)'˅',
+        HERO_DOWN = (short)'▼',
 
             // Enemy hero is pointing left.
 
         OTHER_HERO_LEFT = (short)'˂',
 
-            // AI is pointing up.
+            // Enemy hero is pointing right.
 
-        AI_UP = (short)'?',
+        OTHER_HERO_RIGHT = (short)'˃',
+
+            // Enemy hero is pointing up.
+
+        OTHER_HERO_UP = (short)'˄',
+
+            // Enemy hero is pointing down.
+
+        OTHER_HERO_DOWN = (short)'˅',
+
+            // AI is pointing left.
+
+        AI_LEFT = (short)'«',
 
             // AI is pointing right.
 
         AI_RIGHT = (short)'»',
 
+            // AI is pointing up.
+
+        AI_UP = (short)'?',
+
             // AI is pointing down.
 
         AI_DOWN = (short)'¿',
-
-            // AI is pointing left.
-
-        AI_LEFT = (short)'«',
 
             // AI can also be a prize, then it is highlighted by this
             // sprite every few ticks.
