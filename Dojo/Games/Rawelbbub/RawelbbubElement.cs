@@ -224,6 +224,46 @@ namespace Dojo.Games.Rawelbbub
 
         AI_PRIZE_DOWN = (short)'w',
 
+            // This torpedo moves to the left.
+
+        TORPEDO_SIDE_LEFT = (short)'t',
+
+            // This torpedo moves to the right.
+
+        TORPEDO_SIDE_RIGHT = (short)'T',
+
+            // Your hero is pointing left.
+
+        HERO_SIDE_LEFT = (short)'h',
+
+            // Your hero is pointing right.
+
+        HERO_SIDE_RIGHT = (short)'H',
+
+            // Enemy hero is pointing left.
+
+        OTHER_HERO_SIDE_LEFT = (short)'o',
+
+            // Enemy hero is pointing right.
+
+        OTHER_HERO_SIDE_RIGHT = (short)'O',
+
+            // AI is pointing left.
+
+        AI_SIDE_LEFT = (short)'a',
+
+            // AI is pointing right.
+
+        AI_SIDE_RIGHT = (short)'A',
+
+            // AI with prize is pointing left.
+
+        AI_PRIZE_SIDE_LEFT = (short)'p',
+
+            // AI with prize is pointing right.
+
+        AI_PRIZE_SIDE_RIGHT = (short)'P',
+
             // The dropped prize after the destruction of the prize AI
             // flickers on the field every even tick of the game with this
             // sprite.
