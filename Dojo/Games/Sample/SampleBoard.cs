@@ -36,7 +36,7 @@ namespace Dojo.Games.Sample
         {
             get
             {
-                return BoardString.Contains((char)SampleElement.DEAD_HERO);
+                return BoardString.Contains((char)SampleElement.HERO_DEAD);
             }
         }
         
@@ -116,7 +116,7 @@ namespace Dojo.Games.Sample
         {
             return new List<SampleElement>
             {
-                SampleElement.DEAD_HERO,
+                SampleElement.HERO_DEAD,
                 SampleElement.HERO
             };
         }
@@ -126,7 +126,7 @@ namespace Dojo.Games.Sample
             return new List<SampleElement>
             {
                 SampleElement.OTHER_HERO,
-                SampleElement.OTHER_DEAD_HERO
+                SampleElement.OTHER_HERO_DEAD
             };
         }
 
@@ -161,7 +161,7 @@ namespace Dojo.Games.Sample
                 SampleElement.WALL,
                 SampleElement.BOMB,
                 SampleElement.OTHER_HERO,
-                SampleElement.OTHER_DEAD_HERO
+                SampleElement.OTHER_HERO_DEAD
             };
         }
         

@@ -45,7 +45,7 @@ namespace Dojo.Games.Sample
 
             // Your hero died. His body will disappear in the next tick.
 
-        DEAD_HERO = (short)'X',
+        HERO_DEAD = (short)'X',
 
             // Heroes of other players.
 
@@ -53,7 +53,7 @@ namespace Dojo.Games.Sample
 
             // Another player's hero died.
 
-        OTHER_DEAD_HERO = (short)'Y',
+        OTHER_HERO_DEAD = (short)'Y',
 
             // Heroes of other players in other team.
 
@@ -61,7 +61,7 @@ namespace Dojo.Games.Sample
 
             // Player's Hero from the other team who died.
 
-        ENEMY_DEAD_HERO = (short)'Z',
+        ENEMY_HERO_DEAD = (short)'Z',
 
             // Gold. It must be picked up.
 
