@@ -22,8 +22,6 @@
 # #L%
 ###
 
-#!/usr/bin/env bash
-
 # red 91
 # green 92
 # yellow 93
