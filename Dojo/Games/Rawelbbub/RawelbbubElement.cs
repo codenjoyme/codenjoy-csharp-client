@@ -176,21 +176,37 @@ namespace Dojo.Games.Rawelbbub
 
         HERO_DOWN = (short)'▼',
 
-            // Enemy hero is pointing left.
+            // Other hero is pointing left.
 
         OTHER_HERO_LEFT = (short)'˂',
 
-            // Enemy hero is pointing right.
+            // Other hero is pointing right.
 
         OTHER_HERO_RIGHT = (short)'˃',
 
-            // Enemy hero is pointing up.
+            // Other hero is pointing up.
 
         OTHER_HERO_UP = (short)'˄',
 
-            // Enemy hero is pointing down.
+            // Other hero is pointing down.
 
         OTHER_HERO_DOWN = (short)'˅',
+
+            // Enemy hero is pointing left.
+
+        ENEMY_HERO_LEFT = (short)'Ð',
+
+            // Enemy hero is pointing right.
+
+        ENEMY_HERO_RIGHT = (short)'£',
+
+            // Enemy hero is pointing up.
+
+        ENEMY_HERO_UP = (short)'Ô',
+
+            // Enemy hero is pointing down.
+
+        ENEMY_HERO_DOWN = (short)'Ç',
 
             // AI is pointing left.
 
@@ -240,13 +256,21 @@ namespace Dojo.Games.Rawelbbub
 
         HERO_SIDE_RIGHT = (short)'H',
 
-            // Enemy hero is pointing left.
+            // Other hero is pointing left.
 
         OTHER_HERO_SIDE_LEFT = (short)'o',
 
-            // Enemy hero is pointing right.
+            // Other hero is pointing right.
 
         OTHER_HERO_SIDE_RIGHT = (short)'O',
+
+            // Enemy hero is pointing left.
+
+        ENEMY_HERO_SIDE_LEFT = (short)'e',
+
+            // Enemy hero is pointing right.
+
+        ENEMY_HERO_SIDE_RIGHT = (short)'E',
 
             // AI is pointing left.
 
