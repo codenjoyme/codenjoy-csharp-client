@@ -68,7 +68,7 @@ namespace Dojo.Games.Mollymage
             // disappear on next move. If it's you did it - you'll get
             // score points. Perhaps a prize will appear.
 
-        OPENING_TREASURE_BOX = (short)'H',
+        TREASURE_BOX_OPENING = (short)'H',
 
             // This guys runs over the board randomly and gets in the way
             // all the time. If it will touch Molly - she will die. You'd
@@ -79,7 +79,7 @@ namespace Dojo.Games.Mollymage
 
             // This is ghost corpse.
 
-        DEAD_GHOST = (short)'x',
+        GHOST_DEAD = (short)'x',
 
             // Temporarily increase potion radius blast. Applicable only to
             // new potions.
@@ -123,13 +123,13 @@ namespace Dojo.Games.Mollymage
 
             // This is if your Molly is sitting on own potion.
 
-        POTION_HERO = (short)'☻',
+        HERO_POTION = (short)'☻',
 
             // Oops, your Molly is dead (don't worry, she will appear
             // somewhere in next move). You're getting penalty points for
             // each death.
 
-        DEAD_HERO = (short)'Ѡ',
+        HERO_DEAD = (short)'Ѡ',
 
             // This is what other heroes looks like.
 
@@ -137,12 +137,12 @@ namespace Dojo.Games.Mollymage
 
             // This is if other hero is sitting on own potion.
 
-        OTHER_POTION_HERO = (short)'♠',
+        OTHER_HERO_POTION = (short)'♠',
 
             // Other hero corpse (it will disappear shortly, right on the
             // next move). If you've done it you'll get score points.
 
-        OTHER_DEAD_HERO = (short)'♣',
+        OTHER_HERO_DEAD = (short)'♣',
 
             // This is what enemy heroes looks like.
 
@@ -150,12 +150,12 @@ namespace Dojo.Games.Mollymage
 
             // This is if enemy hero is sitting on own potion.
 
-        ENEMY_POTION_HERO = (short)'Ö',
+        ENEMY_HERO_POTION = (short)'Ö',
 
             // Enemy hero corpse (it will disappear shortly, right on the
             // next move). If you've done it you'll get score points.
 
-        ENEMY_DEAD_HERO = (short)'ø'
+        ENEMY_HERO_DEAD = (short)'ø'
     }
 }
 

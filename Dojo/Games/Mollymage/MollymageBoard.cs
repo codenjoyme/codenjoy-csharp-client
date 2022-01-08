@@ -33,7 +33,7 @@ namespace Dojo.Games.Mollymage
 
         public Point GetHero()
         {
-            var points = Get(MollymageElement.HERO, MollymageElement.POTION_HERO, MollymageElement.DEAD_HERO);
+            var points = Get(MollymageElement.HERO, MollymageElement.HERO_POTION, MollymageElement.HERO_DEAD);
 
             if (!points.Any())
             {
@@ -45,19 +45,19 @@ namespace Dojo.Games.Mollymage
 
         public List<Point> GetOtherHeroes()
         {
-            return Get(MollymageElement.OTHER_HERO, MollymageElement.OTHER_POTION_HERO, MollymageElement.OTHER_DEAD_HERO).ToList();
+            return Get(MollymageElement.OTHER_HERO, MollymageElement.OTHER_HERO_POTION, MollymageElement.OTHER_HERO_DEAD).ToList();
         }
 
         public List<Point> GetEnemyHeroes()
         {
-            return Get(MollymageElement.ENEMY_HERO, MollymageElement.ENEMY_POTION_HERO, MollymageElement.ENEMY_DEAD_HERO).ToList();
+            return Get(MollymageElement.ENEMY_HERO, MollymageElement.ENEMY_HERO_POTION, MollymageElement.ENEMY_HERO_DEAD).ToList();
         }
 
         public bool IsGameOver
         {
             get
             {
-                return BoardString.Contains((char)MollymageElement.DEAD_HERO);
+                return BoardString.Contains((char)MollymageElement.HERO_DEAD);
             }
         }
 
@@ -126,8 +126,8 @@ namespace Dojo.Games.Mollymage
                 .Concat(Get(MollymageElement.POTION_TIMER_3))
                 .Concat(Get(MollymageElement.POTION_TIMER_4))
                 .Concat(Get(MollymageElement.POTION_TIMER_5))
-                .Concat(Get(MollymageElement.POTION_HERO))
-                .Concat(Get(MollymageElement.OTHER_POTION_HERO))
+                .Concat(Get(MollymageElement.HERO_POTION))
+                .Concat(Get(MollymageElement.OTHER_HERO_POTION))
                 .OrderBy(pt => pt.X).ThenBy(pt => pt.Y)
                 .ToList();
         }
