@@ -240,51 +240,51 @@ namespace Dojo.Games.Rawelbbub
 
         AI_PRIZE_DOWN = (short)'w',
 
-            // This torpedo moves to the left.
+            // Turn based mode. This torpedo moves to the left.
 
         TORPEDO_SIDE_LEFT = (short)'t',
 
-            // This torpedo moves to the right.
+            // Turn based mode. This torpedo moves to the right.
 
         TORPEDO_SIDE_RIGHT = (short)'T',
 
-            // Your hero is pointing left.
+            // Turn based mode. Your hero is pointing left.
 
         HERO_SIDE_LEFT = (short)'h',
 
-            // Your hero is pointing right.
+            // Turn based mode. Your hero is pointing right.
 
         HERO_SIDE_RIGHT = (short)'H',
 
-            // Other hero is pointing left.
+            // Turn based mode. Other hero is pointing left.
 
         OTHER_HERO_SIDE_LEFT = (short)'o',
 
-            // Other hero is pointing right.
+            // Turn based mode. Other hero is pointing right.
 
         OTHER_HERO_SIDE_RIGHT = (short)'O',
 
-            // Enemy hero is pointing left.
+            // Turn based mode. Enemy hero is pointing left.
 
         ENEMY_HERO_SIDE_LEFT = (short)'e',
 
-            // Enemy hero is pointing right.
+            // Turn based mode. Enemy hero is pointing right.
 
         ENEMY_HERO_SIDE_RIGHT = (short)'E',
 
-            // AI is pointing left.
+            // Turn based mode. AI is pointing left.
 
         AI_SIDE_LEFT = (short)'a',
 
-            // AI is pointing right.
+            // Turn based mode. AI is pointing right.
 
         AI_SIDE_RIGHT = (short)'A',
 
-            // AI with prize is pointing left.
+            // Turn based mode. AI with prize is pointing left.
 
         AI_PRIZE_SIDE_LEFT = (short)'p',
 
-            // AI with prize is pointing right.
+            // Turn based mode. AI with prize is pointing right.
 
         AI_PRIZE_SIDE_RIGHT = (short)'P',
 
