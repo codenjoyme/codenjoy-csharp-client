@@ -345,7 +345,11 @@ namespace Dojo.Games.Clifford
             // Disguise potion - endow the hero with additional abilities.
             // The hero goes into shadow mode.
 
-        MASK_POTION = (short)'m'
+        MASK_POTION = (short)'m',
+
+            // Ammo clip - additional ammo for hero's gun.
+
+        AMMO_CLIP = (short)'M'
     }
 }
 
