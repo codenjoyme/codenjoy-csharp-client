@@ -31,11 +31,11 @@ namespace Dojo.Games.Chess
     public enum ChessElement : short
     {
 
-            // .
+            // Поле.
 
         SQUARE = (short)'.',
 
-            // .
+            // Препятствие для фигур.
 
         BARRIER = (short)' ',
 
@@ -135,7 +135,7 @@ namespace Dojo.Games.Chess
 
         BLUE_PAWN = (short)'z',
 
-            // Системный спрайт - изображение шахматной доски.
+            // Изображение шахматной доски (фон).
 
         BACKGROUND = (short)'-'
     }
