@@ -31,61 +31,119 @@ namespace Dojo.Games.Expansion
     public enum ExpansionElement : short
     {
 
+            // Empty space (at layer 2) where player can go.
+
         EMPTY = (short)'-',
+
+            // Empty space (at layer 1) where player can go.
 
         FLOOR = (short)'.',
 
+            // Wall.
+
         ANGLE_IN_LEFT = (short)'╔',
+
+            // Wall.
 
         WALL_FRONT = (short)'═',
 
+            // Wall.
+
         ANGLE_IN_RIGHT = (short)'┐',
+
+            // Wall.
 
         WALL_RIGHT = (short)'│',
 
+            // Wall.
+
         ANGLE_BACK_RIGHT = (short)'┘',
+
+            // Wall.
 
         WALL_BACK = (short)'─',
 
+            // Wall.
+
         ANGLE_BACK_LEFT = (short)'└',
+
+            // Wall.
 
         WALL_LEFT = (short)'║',
 
+            // Wall.
+
         WALL_BACK_ANGLE_LEFT = (short)'┌',
+
+            // Wall.
 
         WALL_BACK_ANGLE_RIGHT = (short)'╗',
 
+            // Wall.
+
         ANGLE_OUT_RIGHT = (short)'╝',
+
+            // Wall.
 
         ANGLE_OUT_LEFT = (short)'╚',
 
+            // Wall.
+
         SPACE = (short)' ',
+
+            // Forces of player 1.
 
         FORCE1 = (short)'♥',
 
+            // Forces of player 2.
+
         FORCE2 = (short)'♦',
+
+            // Forces of player 3.
 
         FORCE3 = (short)'♣',
 
+            // Forces of player 4.
+
         FORCE4 = (short)'♠',
+
+            // Exit.
 
         EXIT = (short)'E',
 
+            // Hole.
+
         HOLE = (short)'O',
+
+            // Unpassable break.
 
         BREAK = (short)'B',
 
+            // Gold.
+
         GOLD = (short)'$',
+
+            // Base of player 1.
 
         BASE1 = (short)'1',
 
+            // Base of player 2.
+
         BASE2 = (short)'2',
+
+            // Base of player 3.
 
         BASE3 = (short)'3',
 
+            // Base of player 4.
+
         BASE4 = (short)'4',
 
+            // Fog of war system layer.
+
         FOG = (short)'F',
+
+            // Background system layer.
 
         BACKGROUND = (short)'G'
     }
