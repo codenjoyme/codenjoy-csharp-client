@@ -65,43 +65,43 @@ namespace Dojo.Games.Knibert
 
         HEAD_UP = (short)'▲',
 
-            // Horizontal part of the body.
+            // Horizontal middle part of the body.
 
         TAIL_HORIZONTAL = (short)'═',
 
-            // Vertical part of the body.
+            // Vertical middle part of the body.
 
         TAIL_VERTICAL = (short)'║',
 
-            // Turning the hero body from left to down.
+            // Turning the hero body (middle) from left to down.
 
         TAIL_LEFT_DOWN = (short)'╗',
 
-            // Turning the hero body from left to up.
+            // Turning the hero body (middle) from left to up.
 
         TAIL_LEFT_UP = (short)'╝',
 
-            // Turning the hero body from right to down.
+            // Turning the hero body (middle) from right to down.
 
         TAIL_RIGHT_DOWN = (short)'╔',
 
-            // Turning the hero body from right to up.
+            // Turning the hero body (middle) from right to up.
 
         TAIL_RIGHT_UP = (short)'╚',
 
-            // Down tail.
+            // Down tail end.
 
         TAIL_END_DOWN = (short)'╙',
 
-            // Left tail.
+            // Left tail end.
 
         TAIL_END_LEFT = (short)'╘',
 
-            // Up tail.
+            // Up tail end.
 
         TAIL_END_UP = (short)'╓',
 
-            // Right tail.
+            // Right tail end.
 
         TAIL_END_RIGHT = (short)'╕'
     }
