@@ -31,7 +31,7 @@ namespace Dojo.Games.Sokoban
     public enum SokobanElement : short
     {
 
-            // Emty space.
+            // Empty space.
 
         NONE = (short)' ',
 
