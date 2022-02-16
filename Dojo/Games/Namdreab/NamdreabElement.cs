@@ -43,10 +43,6 @@ namespace Dojo.Games.Namdreab
 
         START_FLOOR = (short)'#',
 
-            // .
-
-        OTHER = (short)'?',
-
             // Apple.
 
         APPLE = (short)'○',
