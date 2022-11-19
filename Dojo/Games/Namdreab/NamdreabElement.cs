@@ -35,9 +35,9 @@ namespace Dojo.Games.Namdreab
 
         NONE = (short)' ',
 
-            // Impenetrable wall.
+            // Impenetrable rock.
 
-        WALL = (short)'☼',
+        ROCK = (short)'☼',
 
             // Respawn point from which the hero starts its movement.
 
