@@ -41,7 +41,7 @@ namespace Dojo.Games.Namdreab
 
             // Respawn point from which the hero starts its movement.
 
-        START_FLOOR = (short)'#',
+        START_SPOT = (short)'#',
 
             // Apple.
 
