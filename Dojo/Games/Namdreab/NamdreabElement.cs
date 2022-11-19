@@ -47,9 +47,9 @@ namespace Dojo.Games.Namdreab
 
         BLUEBERRY = (short)'○',
 
-            // Stone.
+            // Acorn.
 
-        STONE = (short)'●',
+        ACORN = (short)'●',
 
             // Flying pill/Angel's wings.
 
