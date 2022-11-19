@@ -43,9 +43,9 @@ namespace Dojo.Games.Namdreab
 
         START_SPOT = (short)'#',
 
-            // Apple.
+            // Blueberry.
 
-        APPLE = (short)'○',
+        BLUEBERRY = (short)'○',
 
             // Stone.
 
