@@ -51,9 +51,9 @@ namespace Dojo.Games.Namdreab
 
         ACORN = (short)'●',
 
-            // Flying pill/Angel's wings.
+            // Death cap/Angel's wings.
 
-        FLYING_PILL = (short)'©',
+        DEATH_CAP = (short)'©',
 
             // Fury pill/Devil's mask.
 
@@ -87,7 +87,7 @@ namespace Dojo.Games.Namdreab
 
         HEAD_EVIL = (short)'♥',
 
-            // Your hero head under influence Flying pill/Angels wings.
+            // Your hero head under influence Death cap/Angels wings.
 
         HEAD_FLY = (short)'♠',
 
@@ -163,7 +163,7 @@ namespace Dojo.Games.Namdreab
 
         ENEMY_HEAD_EVIL = (short)'♣',
 
-            // Enemy hero head under influence Flying pill/Angels wings.
+            // Enemy hero head under influence Death cap/Angels wings.
 
         ENEMY_HEAD_FLY = (short)'♦',
 
