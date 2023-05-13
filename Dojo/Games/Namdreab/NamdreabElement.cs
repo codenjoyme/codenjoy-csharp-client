@@ -51,17 +51,19 @@ namespace Dojo.Games.Namdreab
 
         ACORN = (short)'●',
 
-            // Death cap/Angel's wings.
+            // Death cap. Brings the player into flight mode, which gives
+            // him the ability to avoid obstacles.
 
         DEATH_CAP = (short)'©',
 
-            // Fly agaric/Devil's mask.
+            // Fly agaric. Brings the player into a fury, which gives him
+            // an advantage when clashing.
 
         FLY_AGARIC = (short)'®',
 
-            // Gold.
+            // Strawberry.
 
-        GOLD = (short)'$',
+        STRAWBERRY = (short)'$',
 
             // Your hero head pointing down.
 
@@ -83,11 +85,11 @@ namespace Dojo.Games.Namdreab
 
         HEAD_DEAD = (short)'☻',
 
-            // Your hero head under influence Fly agaric/Devils mask.
+            // Your hero head under influence fly agaric.
 
         HEAD_EVIL = (short)'♥',
 
-            // Your hero head under influence Death cap/Angels wings.
+            // Your hero head under influence death cap.
 
         HEAD_FLY = (short)'♠',
 
@@ -159,11 +161,11 @@ namespace Dojo.Games.Namdreab
 
         ENEMY_HEAD_DEAD = (short)'☺',
 
-            // Enemy hero head under influence Fly agaric/Devils mask.
+            // Enemy hero head under influence fly agaric.
 
         ENEMY_HEAD_EVIL = (short)'♣',
 
-            // Enemy hero head under influence Death cap/Angels wings.
+            // Enemy hero head under influence death cap.
 
         ENEMY_HEAD_FLY = (short)'♦',
 
