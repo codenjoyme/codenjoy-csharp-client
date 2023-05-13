@@ -55,9 +55,9 @@ namespace Dojo.Games.Namdreab
 
         DEATH_CAP = (short)'©',
 
-            // Fury pill/Devil's mask.
+            // Fly agaric/Devil's mask.
 
-        FURY_PILL = (short)'®',
+        FLY_AGARIC = (short)'®',
 
             // Gold.
 
@@ -83,7 +83,7 @@ namespace Dojo.Games.Namdreab
 
         HEAD_DEAD = (short)'☻',
 
-            // Your hero head under influence Fury pill/Devils mask.
+            // Your hero head under influence Fly agaric/Devils mask.
 
         HEAD_EVIL = (short)'♥',
 
@@ -159,7 +159,7 @@ namespace Dojo.Games.Namdreab
 
         ENEMY_HEAD_DEAD = (short)'☺',
 
-            // Enemy hero head under influence Fury pill/Devils mask.
+            // Enemy hero head under influence Fly agaric/Devils mask.
 
         ENEMY_HEAD_EVIL = (short)'♣',
 
